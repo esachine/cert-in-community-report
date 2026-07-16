@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CERT-In Community Threat Brief</title>
+<meta name="description" content="Plain-language cybersecurity threat brief for India, built from official CERT-In advisories." />
+<style>
+  :root{
+    --bg:#ffffff;--panel:#ffffff;--soft:#f6f7f8;--line:#e4e7e9;
+    --ink:#1c2124;--muted:#61696f;--link:#0b5c8f;
+    --crit:#b3261e;--high:#9a6100;--med:#345b73;--low:#3f6b45;
+    --maxw:820px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Segoe UI",Roboto,system-ui,-apple-system,sans-serif;
+    line-height:1.6;font-size:16px;overflow-wrap:break-word}
+  a{color:var(--link);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 1.15rem}
+
+  header.hero{padding:2.2rem 0 1.1rem;border-bottom:1px solid var(--line)}
+  .kicker{font-size:.76rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .hero h1{margin:.45rem 0 .5rem;font-size:clamp(1.5rem,3.5vw,2rem);letter-spacing:-.01em;font-weight:700}
+  .hero p.lead{margin:0;color:var(--muted);max-width:46rem}
+  .meta{margin-top:.9rem;font-size:.82rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:.3rem 1.2rem}
+  .meta strong{color:var(--ink);font-weight:600}
+  .note{margin-top:.9rem;font-size:.8rem;color:var(--muted);border-left:3px solid var(--line);padding:.15rem 0 .15rem .8rem}
+
+  .toolbar{position:sticky;top:0;z-index:5;background:var(--bg);
+    padding:.9rem 0;border-bottom:1px solid var(--line);margin-bottom:.4rem}
+  .toolbar input{width:100%;background:var(--panel);color:var(--ink);
+    border:1px solid var(--line);border-radius:8px;padding:.6rem .75rem;font-size:.95rem}
+  .toolbar input:focus{outline:none;border-color:var(--link)}
+  .result-count{color:var(--muted);font-size:.8rem;margin:.5rem 0 0}
+
+  .group{margin:1.8rem 0}
+  .group-title{font-size:1.15rem;font-weight:700;margin:0 0 1rem;
+    padding-bottom:.5rem;border-bottom:2px solid var(--ink)}
+  .group-title .count{color:var(--muted);font-weight:500;font-size:.9rem}
+  .group-list{display:flex;flex-direction:column;gap:1.1rem}
+
+  .item{border:1px solid var(--line);border-left:3px solid var(--line);
+    border-radius:8px;padding:1.15rem 1.25rem;background:var(--panel)}
+  .item.lv-crit{border-left-color:var(--crit)}
+  .item.lv-high{border-left-color:var(--high)}
+  .item.lv-med{border-left-color:var(--med)}
+  .item.lv-low{border-left-color:var(--low)}
+
+  .item-head{display:flex;flex-wrap:wrap;align-items:center;gap:.55rem;
+    font-size:.8rem;color:var(--muted)}
+  .doc-id{font-family:Consolas,"Courier New",monospace;font-weight:700;font-size:.8rem}
+  .doc-type{background:var(--soft);border:1px solid var(--line);border-radius:5px;
+    padding:.05rem .45rem;font-size:.72rem}
+  .doc-date{margin-left:auto}
+  .new{background:#0b5c8f;color:#fff;border-radius:5px;padding:.05rem .4rem;
+    font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em}
+
+  .item-title{margin:.55rem 0 .35rem;font-size:1.14rem;font-weight:700;line-height:1.35}
+  .item-sev{margin:0 0 .8rem;font-size:.84rem;color:var(--muted)}
+  .item-sev .sev{font-weight:700}
+  .sev-crit{color:var(--crit)} .sev-high{color:var(--high)}
+  .sev-med{color:var(--med)} .sev-low{color:var(--low)} .sev-none{color:var(--muted)}
+
+  .sec{margin:.7rem 0}
+  .sec h4{margin:0 0 .15rem;font-size:.74rem;font-weight:700;letter-spacing:.05em;
+    text-transform:uppercase;color:var(--muted)}
+  .sec-body p{margin:0 0 .5rem;font-size:.93rem}
+  .sec-body p:last-child{margin-bottom:0}
+  .refs{margin:.1rem 0 0;padding-left:1.15rem}
+  .refs li{font-size:.86rem;margin-bottom:.3rem;overflow-wrap:anywhere}
+  .steps{margin:.2rem 0 0;padding-left:1.3rem}
+  .steps li{font-size:.9rem;margin-bottom:.4rem}
+
+  .more{margin:.4rem 0 0}
+  .more>summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:.35rem;
+    color:var(--link);font-weight:600;font-size:.86rem;padding:.35rem 0}
+  .more>summary::-webkit-details-marker{display:none}
+  .more>summary::before{content:"\25B8";font-size:.8em}
+  .more[open]>summary::before{content:"\25BE"}
+  .more>summary .more-label::after{content:"View more details"}
+  .more[open]>summary .more-label::after{content:"Show less"}
+  .more-body{margin-top:.3rem;padding-top:.5rem;border-top:1px dashed var(--line)}
+
+  .item-src{margin:.9rem 0 0;padding-top:.7rem;border-top:1px solid var(--line);font-size:.85rem}
+
+  .empty{color:var(--muted);padding:2.5rem 0;text-align:center}
+  footer{color:var(--muted);font-size:.82rem;padding:2rem 0 3rem;border-top:1px solid var(--line);margin-top:2.5rem}
+  footer a{font-weight:600}
+
+  @media (max-width:640px){
+    body{font-size:15px}
+    .item{padding:1rem 1rem}
+    .doc-date{margin-left:0;width:100%}
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <p class="kicker">Community Threat Brief</p>
+      <h1>CERT-In advisories, explained</h1>
+      <p class="lead">A clean, plain-language view of the latest security alerts
+        that India's CERT-In is highlighting right now.</p>
+      <div class="meta">
+        <span>Source: <strong>cert-in.org.in</strong> only</span>
+        <span>Last updated: <strong>2026-07-16 08:14 UTC</strong></span>
+        <span>Items: <strong>6</strong></span>
+      </div>
+      <p class="note">A community project that reorganizes public CERT-In advisories for clarity.
+        Not an official CERT-In publication &mdash; confirm details on the linked official page before acting.</p>
+    </header>
+
+    <div class="toolbar">
+      <input id="search" type="search" placeholder="Search by product, ID or keyword..." aria-label="Search advisories" />
+      <p class="result-count"><span id="shown">6</span> of 6 items shown</p>
+    </div>
+
+    <main id="main">
+
+      <section class="group" data-group="alerts">
+        <h2 class="group-title">Latest Security Alerts <span class="count">(6)</span></h2>
+        <div class="group-list">
+
+      <article class="item lv-crit" data-sev="critical" data-search="civn-2026-0365 multiple vulnerabilities in mozilla firefox web browsers critical vulnerability note mozilla firefox versions prior to 152.0.6.">
+        <div class="item-head">
+          <a class="doc-id" href="https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES01&amp;VLCODE=CIVN-2026-0365" target="_blank" rel="noopener">CIVN-2026-0365</a>
+          <span class="doc-type">Vulnerability Note</span>
+          
+          <span class="doc-date">July 16, 2026</span>
+        </div>
+        <h3 class="item-title">Multiple Vulnerabilities in Mozilla Firefox</h3>
+        <p class="item-sev">Severity: <span class="sev sev-crit">Critical</span></p>
+        <div class="sec"><h4>What happened</h4><div class="sec-body"><p>Multiple vulnerabilities have been reported in Mozilla Firefox which could allow a remote attacker to execute arbitrary code, bypass security restrictions, denial of service, and data manipulation on the targeted system.</p></div></div>
+        <details class="more"><summary><span class="more-label"></span></summary>
+        <div class="more-body"><div class="sec"><h4>Software affected</h4><div class="sec-body"><p>Mozilla Firefox versions prior to 152.0.6.</p></div></div><div class="sec"><h4>Who is affected</h4><div class="sec-body"><p>All end-user organizations and individuals using Mozilla Firefox.</p></div></div><div class="sec"><h4>Risk</h4><div class="sec-body"><p>High risk of denial of service (DoS), and data manipulation on the targeted system.</p></div></div><div class="sec"><h4>Potential impact</h4><div class="sec-body"><p>Potential for remote code execution and bypass security restrictions.</p></div></div><div class="sec"><h4>Details</h4><div class="sec-body"><p>Mozilla Firefox is a free and open-source web browser developed by the Mozilla Foundation. Multiple vulnerabilities exist in Mozilla Firefox due to an Invalid pointer in the JavaScript of WebAssembly component and Improper site isolation in the DOM of Navigation component. Successful exploitation of these vulnerabilities could allow a remote attacker to execute arbitrary code, bypass security restrictions, denial of service, and data manipulation on the targeted system.</p></div></div><div class="sec"><h4>What to do</h4><div class="sec-body"><p>Apply the appropriate security update provided by the vendor: <a href="https://www.mozilla.org/en-US/security/advisories/mfsa2026-67/" target="_blank" rel="noopener">mfsa2026-67</a></p></div></div><div class="sec"><h4>References</h4><div class="sec-body"><ul class="refs"><li><a href="https://www.mozilla.org/en-US/security/advisories/mfsa2026-67/" target="_blank" rel="noopener">www.mozilla.org/en-US/security/advisories/mfsa2026-67/</a></li></ul></div></div></div></details>
+        <p class="item-src"><a href="https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES01&amp;VLCODE=CIVN-2026-0365" target="_blank" rel="noopener">View the official CERT-In page</a></p>
+      </article>
+
+      <article class="item lv-high" data-sev="high" data-search="ciad-2026-0034 multiple vulnerabilities in sap products enterprise software high advisory sap s/4hana including project management (ppm-pro), draft operation, and create single payment sap netweaver application server (abap and java) including business server pages, web container, and configuration wizard sap netweaver enterprise portal sap commerce cloud sap approuter library sap integration suite (edge integration cell) saprouter (microsoft windows) sap change and transport system (cts) attach tool (ctsattach) sap fiori (launchpad) sap crm (webclient ui) sap hana extended application services (xs classic model - user self service) ui5 web components base (ui5/webcomponents-base)">
+        <div class="item-head">
+          <a class="doc-id" href="https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES02&amp;VLCODE=CIAD-2026-0034" target="_blank" rel="noopener">CIAD-2026-0034</a>
+          <span class="doc-type">Advisory</span>
+          
+          <span class="doc-date">July 16, 2026</span>
+        </div>
+        <h3 class="item-title">Multiple Vulnerabilities in SAP Products</h3>
+        <p class="item-sev">Severity: <span class="sev sev-high">High</span></p>
+        <div class="sec"><h4>What happened</h4><div class="sec-body"><p>Multiple vulnerabilities have been reported in SAP products which could allow an attacker to execute arbitrary code, perform HTTP request smuggling, SQL injection, cross-site scripting (XSS), open redirect, directory traversal, and DLL hijacking attacks, disclose sensitive information, bypass authorization checks, exploit security misconfigurations, or cause denial-of-service (DoS) conditions on the targeted system.</p></div></div>
+        <details class="more"><summary><span class="more-label"></span></summary>
+        <div class="more-body"><div class="sec"><h4>Software affected</h4><div class="sec-body"><p>SAP S/4HANA including Project Management (PPM-PRO), Draft Operation, and Create Single Payment SAP NetWeaver Application Server (ABAP and Java) including Business Server Pages, Web Container, and Configuration Wizard SAP NetWeaver Enterprise Portal SAP Commerce Cloud SAP Approuter Library SAP Integration Suite (Edge Integration Cell) SAProuter (Microsoft Windows) SAP Change and Transport System (CTS) Attach Tool (ctsattach) SAP Fiori (Launchpad) SAP CRM (WebClient UI) SAP HANA Extended Application Services (XS Classic Model - User Self Service) UI5 Web Components Base (ui5/webcomponents-base)</p></div></div><div class="sec"><h4>Who is affected</h4><div class="sec-body"><p>SAP Basis administrators, SAP system administrators, SAP security teams, IT infrastructure teams, SAP application administrators, and developers managing or supporting affected SAP products and components.</p></div></div><div class="sec"><h4>Risk</h4><div class="sec-body"><p>High risk of unauthorized access, execution of arbitrary code or commands, disclosure of sensitive information, authentication and authorization bypass, and compromise of affected SAP systems.</p></div></div><div class="sec"><h4>Potential impact</h4><div class="sec-body"><p>Potential remote code execution, unauthorized access, information disclosure, data compromise, and disruption of affected SAP systems.</p></div></div><div class="sec"><h4>Details</h4><div class="sec-body"><p>Multiple vulnerabilities have been reported in SAP products; Details of which are provided below:</p></div></div><div class="sec"><h4>What to do</h4><div class="sec-body"><p>Apply appropriate fixes as mentioned in SAP Security Advisory: <a href="https://support.sap.com/en/my-support/knowledge-base/security-notes-news/july-2026.html" target="_blank" rel="noopener">july-2026</a></p></div></div><div class="sec"><h4>References</h4><div class="sec-body"><ul class="refs"><li><a href="https://support.sap.com/en/my-support/knowledge-base/security-notes-news/july-2026.html" target="_blank" rel="noopener">support.sap.com/en/my-support/knowledge-base/security-notes-news/july-2026.html</a></li></ul></div></div></div></details>
+        <p class="item-src"><a href="https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES02&amp;VLCODE=CIAD-2026-0034" target="_blank" rel="noopener">View the official CERT-In page</a></p>
+      </article>
+
+      <article class="item lv-high" data-sev="high" data-search="civn-2026-0364 remote code execution vulnerability in sp pagebuilder extension for joomla websites &amp; cms high vulnerability note joomshaper sp pagebuilder extension versions prior to 6.6.2">
+        <div class="item-head">
+          <a class="doc-id" href="https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES01&amp;VLCODE=CIVN-2026-0364" target="_blank" rel="noopener">CIVN-2026-0364</a>
+          <span class="doc-type">Vulnerability Note</span>
+          
+          <span class="doc-date">July 15, 2026</span>
+        </div>
+        <h3 class="item-title">Remote Code Execution Vulnerability in SP Pagebuilder Extension for Joomla</h3>
+        <p class="item-sev">Severity: <span class="sev sev-high">High</span></p>
+        <div class="sec"><h4>What happened</h4><div class="sec-body"><p>A vulnerability has been reported in the Joomshaper SP Page Builder extension for Joomla, which could allow an unauthenticated attacker to execute arbitrary code, or completely compromise the affected website.</p></div></div>
+        <details class="more"><summary><span class="more-label"></span></summary>
+        <div class="more-body"><div class="sec"><h4>Software affected</h4><div class="sec-body"><p>Joomshaper SP Pagebuilder extension versions prior to 6.6.2</p></div></div><div class="sec"><h4>Who is affected</h4><div class="sec-body"><p>All end-user organizations and individuals using the SP Page Builder extension for Joomla.</p></div></div><div class="sec"><h4>Risk</h4><div class="sec-body"><p>Risk of remote code execution.</p></div></div><div class="sec"><h4>Potential impact</h4><div class="sec-body"><p>Unauthorized access to sensitive data, data manipulation and complete system compromise.</p></div></div><div class="sec"><h4>Details</h4><div class="sec-body"><p>SP Page Builder is a page builder extension for Joomla that enables users to create responsive web pages using a drag-and-drop interface without extensive coding. A vulnerability has been reported in the SP Page Builder extension for Joomla due to improper validation of filetype during before upload. An attacker could exploit this vulnerability by uploading a malicious file. Successful exploitation of this vulnerability could allow an attacker to execute arbitrary code, or completely compromise the affected website.</p></div></div><div class="sec"><h4>What to do</h4><div class="sec-body"><p>Update to the latest version of the extension: <a href="https://www.joomshaper.com/page-builder/" target="_blank" rel="noopener">page-builder</a></p></div></div><div class="sec"><h4>References</h4><div class="sec-body"><ul class="refs"><li><a href="https://www.joomshaper.com/page-builder/" target="_blank" rel="noopener">www.joomshaper.com/page-builder/</a></li></ul></div></div></div></details>
+        <p class="item-src"><a href="https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES01&amp;VLCODE=CIVN-2026-0364" target="_blank" rel="noopener">View the official CERT-In page</a></p>
+      </article>
+
+      <article class="item lv-crit" data-sev="critical" data-search="civn-2026-0363 multiple vulnerabilities in ivanti sentry network &amp; security gear critical vulnerability note ivanti sentry 10.5.x versions prior to 10.5.2 ivanti sentry 10.6.x versions prior to 10.6.2 ivanti sentry 10.7.x versions prior to 10.7.1">
+        <div class="item-head">
+          <a class="doc-id" href="https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES01&amp;VLCODE=CIVN-2026-0363" target="_blank" rel="noopener">CIVN-2026-0363</a>
+          <span class="doc-type">Vulnerability Note</span>
+          
+          <span class="doc-date">July 13, 2026</span>
+        </div>
+        <h3 class="item-title">Multiple Vulnerabilities in Ivanti Sentry</h3>
+        <p class="item-sev">Severity: <span class="sev sev-crit">Critical</span></p>
+        <div class="sec"><h4>What happened</h4><div class="sec-body"><p>Multiple vulnerabilities have been reported in Ivanti Sentry, which could allow a remote unauthenticated attacker to execute arbitrary code with root privileges, bypass authentication, create arbitrary administrative accounts, and gain full administrative access on the targeted system.</p></div></div>
+        <details class="more"><summary><span class="more-label"></span></summary>
+        <div class="more-body"><div class="sec"><h4>Software affected</h4><div class="sec-body"><p>Ivanti Sentry 10.5.x versions prior to 10.5.2 Ivanti Sentry 10.6.x versions prior to 10.6.2 Ivanti Sentry 10.7.x versions prior to 10.7.1</p></div></div><div class="sec"><h4>Who is affected</h4><div class="sec-body"><p>IT administrators, security administrators, network administrators, and organizations using Ivanti Sentry.</p></div></div><div class="sec"><h4>Risk</h4><div class="sec-body"><p>Critical risk of complete system compromise, unauthorized administrative access, and execution of arbitrary commands.</p></div></div><div class="sec"><h4>Potential impact</h4><div class="sec-body"><p>Potential for complete system compromise, unauthorized administrative access, and arbitrary code execution with root privileges.</p></div></div><div class="sec"><h4>Details</h4><div class="sec-body"><p>Ivanti Sentry, formerly known as MobileIron Sentry, is an in-line gateway that manages, encrypts, and secures traffic between mobile devices and backend enterprise systems. Multiple critical vulnerabilities have been reported in Ivanti Sentry due to improper neutralization of special elements used in an operating system command and authentication bypass using an alternate path or channel. Successful exploitation of these vulnerabilities could allow a remote unauthenticated attacker to execute arbitrary code with root privileges, bypass authentication, create arbitrary administrative accounts, and gain full administrative access on the targeted system. Note: CVE-2026-10520 is being actively exploited in the wild.</p></div></div><div class="sec"><h4>What to do</h4><div class="sec-body"><p>Upgrade to Ivanti Sentry versions 10.5.2, 10.6.2 or 10.7.1, as applicable, by applying the security updates provided by Ivanti immediately: <a href="https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523?language=en_US" target="_blank" rel="noopener">hub.ivanti.com</a></p></div></div><div class="sec"><h4>References</h4><div class="sec-body"><ul class="refs"><li><a href="https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523?language=en_US" target="_blank" rel="noopener">hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523?language=en_US</a></li></ul></div></div></div></details>
+        <p class="item-src"><a href="https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES01&amp;VLCODE=CIVN-2026-0363" target="_blank" rel="noopener">View the official CERT-In page</a></p>
+      </article>
+
+      <article class="item lv-crit" data-sev="critical" data-search="ciad-2026-0033 multiple vulnerabilities in apple products other software critical advisory apple ios versions prior to 26.5.2 apple ipados versions prior to 26.5.2 apple macos tahoe versions prior to 26.5.2 apple safari versions prior to 26.5.2">
+        <div class="item-head">
+          <a class="doc-id" href="https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES02&amp;VLCODE=CIAD-2026-0033" target="_blank" rel="noopener">CIAD-2026-0033</a>
+          <span class="doc-type">Advisory</span>
+          
+          <span class="doc-date">June 30, 2026</span>
+        </div>
+        <h3 class="item-title">Multiple vulnerabilities in Apple Products</h3>
+        <p class="item-sev">Severity: <span class="sev sev-crit">Critical</span></p>
+        <div class="sec"><h4>What happened</h4><div class="sec-body"><p>Multiple vulnerabilities have been reported in Apple products which could allow an attacker to disclose sensitive information, gain elevated privileges, bypass security restrictions, execute arbitrary code, perform cross-origin data exfiltration, and cause denial-of-service (DoS) condition on the targeted system.</p></div></div>
+        <details class="more"><summary><span class="more-label"></span></summary>
+        <div class="more-body"><div class="sec"><h4>Software affected</h4><div class="sec-body"><p>Apple iOS versions prior to 26.5.2 Apple iPadOS versions prior to 26.5.2 Apple macOS Tahoe versions prior to 26.5.2 Apple Safari versions prior to 26.5.2</p></div></div><div class="sec"><h4>Who is affected</h4><div class="sec-body"><p>All individual and organizations using Apple Products.</p></div></div><div class="sec"><h4>Risk</h4><div class="sec-body"><p>High risk of sensitive information disclosure, privilege escalation, disruption of services.</p></div></div><div class="sec"><h4>Potential impact</h4><div class="sec-body"><p>Potential for full system compromise, remote code execution, service unavailability.</p></div></div><div class="sec"><h4>Details</h4><div class="sec-body"><p>Multiple vulnerabilities have been reported in Apple products:</p></div></div><div class="sec"><h4>What to do</h4><div class="sec-body"><p>Apply appropriate updates as mentioned by the vendor: <a href="https://support.apple.com/en-us/127594" target="_blank" rel="noopener">127594</a> <a href="https://support.apple.com/en-us/127595" target="_blank" rel="noopener">127595</a> <a href="https://support.apple.com/en-us/127685" target="_blank" rel="noopener">127685</a></p></div></div><div class="sec"><h4>References</h4><div class="sec-body"><ul class="refs"><li><a href="https://support.apple.com/en-us/127594" target="_blank" rel="noopener">support.apple.com/en-us/127594</a></li><li><a href="https://support.apple.com/en-us/127595" target="_blank" rel="noopener">support.apple.com/en-us/127595</a></li><li><a href="https://support.apple.com/en-us/127685" target="_blank" rel="noopener">support.apple.com/en-us/127685</a></li></ul></div></div></div></details>
+        <p class="item-src"><a href="https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES02&amp;VLCODE=CIAD-2026-0033" target="_blank" rel="noopener">View the official CERT-In page</a></p>
+      </article>
+
+      <article class="item lv-crit" data-sev="critical" data-search="ciad-2026-0032 multiple vulnerabilities in oracle products enterprise software critical advisory oracle communications oracle e-business suite oracle enterprise manager oracle fusion middleware oracle jd edwards enterpriseone oracle mysql oracle peoplesoft oracle siebel crm oracle supply chain products oracle solaris oracle vm virtualbox for complete list of affected products refer to the oracle advisory: https://www.oracle.com/security-alerts/cspujun2026.html">
+        <div class="item-head">
+          <a class="doc-id" href="https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES02&amp;VLCODE=CIAD-2026-0032" target="_blank" rel="noopener">CIAD-2026-0032</a>
+          <span class="doc-type">Advisory</span>
+          
+          <span class="doc-date">June 18, 2026</span>
+        </div>
+        <h3 class="item-title">Multiple Vulnerabilities in Oracle Products</h3>
+        <p class="item-sev">Severity: <span class="sev sev-crit">Critical</span></p>
+        <div class="sec"><h4>What happened</h4><div class="sec-body"><p>Multiple vulnerabilities have been reported in various Oracle products which could allow a remote attacker to execute arbitrary code, gain elevated access, trigger denial of service condition, gain unauthorized access to sensitive information, manipulate data and bypass security restriction on the targeted system.</p></div></div>
+        <details class="more"><summary><span class="more-label"></span></summary>
+        <div class="more-body"><div class="sec"><h4>Software affected</h4><div class="sec-body"><p>Oracle Communications Oracle E-Business Suite Oracle Enterprise Manager Oracle Fusion Middleware Oracle JD Edwards EnterpriseOne Oracle MySQL Oracle PeopleSoft Oracle Siebel CRM Oracle Supply Chain Products Oracle Solaris Oracle VM VirtualBox For complete list of affected products refer to the oracle advisory: <a href="https://www.oracle.com/security-alerts/cspujun2026.html" target="_blank" rel="noopener">cspujun2026</a></p></div></div><div class="sec"><h4>Who is affected</h4><div class="sec-body"><p>Individuals and organisational users of the above-mentioned Oracle products.</p></div></div><div class="sec"><h4>Risk</h4><div class="sec-body"><p>High risk of arbitrary code execution, unauthorized access, denial of service, data manipulation, information disclosure and privilege escalation.</p></div></div><div class="sec"><h4>Potential impact</h4><div class="sec-body"><p>Potential for unauthorized access to sensitive information, denial of service, data manipulation, privilege escalation and full system compromise.</p></div></div><div class="sec"><h4>Details</h4><div class="sec-body"><p>Oracle products are used for several applications including enterprise-level data management, cloud solutions, software development, and business applications. They are employed across a wide range of sectors, including finance, healthcare, manufacturing, government, and retail, among others. Multiple vulnerabilities have been reported in various components of Oracle products. Successful exploitation of these vulnerabilities could allow an attacker to execute arbitrary code, gain elevated access, trigger denial of service condition, gain unauthorized access to sensitive information, manipulate data and bypass security restrictions on the targeted system. For complete list of affected products, CVEs, workarounds and solutions, refer to the oracle advisory: <a href="https://www.oracle.com/security-alerts/cspujun2026.html" target="_blank" rel="noopener">cspujun2026</a></p></div></div><div class="sec"><h4>What to do</h4><div class="sec-body"><p>Apply the security updates released by Microsoft: <a href="https://www.oracle.com/security-alerts/cspujun2026.html" target="_blank" rel="noopener">cspujun2026</a></p></div></div><div class="sec"><h4>References</h4><div class="sec-body"><ul class="refs"><li><a href="https://www.oracle.com/security-alerts/cspujun2026.html" target="_blank" rel="noopener">www.oracle.com/security-alerts/cspujun2026.html</a></li></ul></div></div></div></details>
+        <p class="item-src"><a href="https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES02&amp;VLCODE=CIAD-2026-0032" target="_blank" rel="noopener">View the official CERT-In page</a></p>
+      </article>
+        </div>
+      </section>
+      <p class="empty" id="empty" hidden>No items match your search.</p>
+    </main>
+
+    <footer>
+      <p>Community Threat Brief &middot; Data sourced only from
+        <a href="https://www.cert-in.org.in/s2cMainServlet?pageid=PUBWEL01" target="_blank" rel="noopener">CERT-In</a>.
+        Learn <a href="/about">how this works</a>.</p>
+      <p>Machine-readable data: <a href="/data/brief.json">brief.json</a></p>
+    </footer>
+  </div>
+
+<script>
+(function(){
+  var search=document.getElementById('search');
+  var items=Array.prototype.slice.call(document.querySelectorAll('.item'));
+  var groups=Array.prototype.slice.call(document.querySelectorAll('.group'));
+  var empty=document.getElementById('empty');
+  var shownEl=document.getElementById('shown');
+  function apply(){
+    var q=(search.value||'').toLowerCase().trim();
+    var shown=0;
+    items.forEach(function(it){
+      var vis=!q||(it.getAttribute('data-search')||'').indexOf(q)!==-1;
+      it.style.display=vis?'':'none';
+      if(vis)shown++;
+    });
+    groups.forEach(function(g){
+      var any=g.querySelectorAll('.item:not([style*="display: none"])').length>0;
+      g.style.display=any?'':'none';
+    });
+    if(shownEl)shownEl.textContent=shown;
+    empty.hidden=shown!==0;
+  }
+  search.addEventListener('input',apply);
+})();
+</script>
+</body>
+</html>

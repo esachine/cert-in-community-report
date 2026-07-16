@@ -1,0 +1,17 @@
+# Normalize line endings. Repo stores text as LF; deploy targets are Linux
+# (Hostinger + GitHub Actions), so keep LF in the working copy too.
+* text=auto eol=lf
+
+# Explicitly treat these as text.
+*.js   text eol=lf
+*.json text eol=lf
+*.html text eol=lf
+*.css  text eol=lf
+*.md   text eol=lf
+*.yml  text eol=lf
+
+# Leave binaries untouched.
+*.png binary
+*.ico binary
+*.jpg binary
+*.svg binary

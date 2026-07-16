@@ -1,0 +1,173 @@
+{
+  "updated_at": "2026-07-16T08:14:00.093Z",
+  "items": [
+    {
+      "id": "CIVN-2026-0365",
+      "type": "CIVN",
+      "title": "Multiple Vulnerabilities in Mozilla Firefox",
+      "date": "July 16, 2026",
+      "severity": "Critical",
+      "source_url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES01&VLCODE=CIVN-2026-0365",
+      "priority": "act-now",
+      "category": "Web browsers",
+      "whoAffected": "All end-user organizations and individuals using Mozilla Firefox.",
+      "whatItMeans": "Multiple vulnerabilities have been reported in Mozilla Firefox which could allow a remote attacker to execute arbitrary code, bypass security restrictions, denial of service, and data manipulation on the targeted system.",
+      "whatToDo": [
+        "Apply the appropriate security update provided by the vendor: https://www.mozilla.org/en-US/security/advisories/mfsa2026-67/."
+      ],
+      "softwareAffected": "Mozilla Firefox versions prior to 152.0.6.",
+      "sections": {
+        "softwareAffected": "Mozilla Firefox versions prior to 152.0.6.",
+        "overview": "Multiple vulnerabilities have been reported in Mozilla Firefox which could allow a remote attacker to execute arbitrary code, bypass security restrictions, denial of service, and data manipulation on the targeted system.",
+        "targetAudience": "All end-user organizations and individuals using Mozilla Firefox.",
+        "riskAssessment": "High risk of denial of service (DoS), and data manipulation on the targeted system.",
+        "impactAssessment": "Potential for remote code execution and bypass security restrictions.",
+        "description": "Mozilla Firefox is a free and open-source web browser developed by the Mozilla Foundation. Multiple vulnerabilities exist in Mozilla Firefox due to an Invalid pointer in the JavaScript of WebAssembly component and Improper site isolation in the DOM of Navigation component. Successful exploitation of these vulnerabilities could allow a remote attacker to execute arbitrary code, bypass security restrictions, denial of service, and data manipulation on the targeted system.",
+        "recommendations": null,
+        "solution": "Apply the appropriate security update provided by the vendor: https://www.mozilla.org/en-US/security/advisories/mfsa2026-67/",
+        "references": "Mozilla https://www.mozilla.org/en-US/security/advisories/mfsa2026-67/ CVE Name CVE-2026-15718 CVE-2026-15719"
+      },
+      "fetched_at": "2026-07-16T08:00:56.418Z"
+    },
+    {
+      "id": "CIVN-2026-0364",
+      "type": "CIVN",
+      "title": "Remote Code Execution Vulnerability in SP Pagebuilder Extension for Joomla",
+      "date": "July 15, 2026",
+      "severity": "High",
+      "source_url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES01&VLCODE=CIVN-2026-0364",
+      "priority": "this-week",
+      "category": "Websites & CMS",
+      "whoAffected": "All end-user organizations and individuals using the SP Page Builder extension for Joomla.",
+      "whatItMeans": "A vulnerability has been reported in the Joomshaper SP Page Builder extension for Joomla, which could allow an unauthenticated attacker to execute arbitrary code, or completely compromise the affected website.",
+      "whatToDo": [
+        "Update to the latest version of the extension: https://www.joomshaper.com/page-builder/."
+      ],
+      "softwareAffected": "Joomshaper SP Pagebuilder extension versions prior to 6.6.2",
+      "sections": {
+        "softwareAffected": "Joomshaper SP Pagebuilder extension versions prior to 6.6.2",
+        "overview": "A vulnerability has been reported in the Joomshaper SP Page Builder extension for Joomla, which could allow an unauthenticated attacker to execute arbitrary code, or completely compromise the affected website.",
+        "targetAudience": "All end-user organizations and individuals using the SP Page Builder extension for Joomla.",
+        "riskAssessment": "Risk of remote code execution.",
+        "impactAssessment": "Unauthorized access to sensitive data, data manipulation and complete system compromise.",
+        "description": "SP Page Builder is a page builder extension for Joomla that enables users to create responsive web pages using a drag-and-drop interface without extensive coding. A vulnerability has been reported in the SP Page Builder extension for Joomla due to improper validation of filetype during before upload. An attacker could exploit this vulnerability by uploading a malicious file. Successful exploitation of this vulnerability could allow an attacker to execute arbitrary code, or completely compromise the affected website.",
+        "recommendations": null,
+        "solution": "Update to the latest version of the extension: https://www.joomshaper.com/page-builder/",
+        "references": "Joomshaper https://www.joomshaper.com/page-builder/ CVE Name CVE-2026-48908"
+      },
+      "fetched_at": "2026-07-16T08:00:58.537Z"
+    },
+    {
+      "id": "CIVN-2026-0363",
+      "type": "CIVN",
+      "title": "Multiple Vulnerabilities in Ivanti Sentry",
+      "date": "July 13, 2026",
+      "severity": "Critical",
+      "source_url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES01&VLCODE=CIVN-2026-0363",
+      "priority": "act-now",
+      "category": "Network & security gear",
+      "whoAffected": "IT administrators, security administrators, network administrators, and organizations using Ivanti Sentry.",
+      "whatItMeans": "Multiple vulnerabilities have been reported in Ivanti Sentry, which could allow a remote unauthenticated attacker to execute arbitrary code with root privileges, bypass authentication, create arbitrary administrative accounts, and gain full administrative access on the targeted system.",
+      "whatToDo": [
+        "Upgrade to Ivanti Sentry versions 10.5.2, 10.6.2 or 10.7.1, as applicable, by applying the security updates provided by Ivanti immediately: https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523?language=en_US."
+      ],
+      "softwareAffected": "Ivanti Sentry 10.5.x versions prior to 10.5.2 Ivanti Sentry 10.6.x versions prior to 10.6.2 Ivanti Sentry 10.7.x versions prior to 10.7.1",
+      "sections": {
+        "softwareAffected": "Ivanti Sentry 10.5.x versions prior to 10.5.2 Ivanti Sentry 10.6.x versions prior to 10.6.2 Ivanti Sentry 10.7.x versions prior to 10.7.1",
+        "overview": "Multiple vulnerabilities have been reported in Ivanti Sentry, which could allow a remote unauthenticated attacker to execute arbitrary code with root privileges, bypass authentication, create arbitrary administrative accounts, and gain full administrative access on the targeted system.",
+        "targetAudience": "IT administrators, security administrators, network administrators, and organizations using Ivanti Sentry.",
+        "riskAssessment": "Critical risk of complete system compromise, unauthorized administrative access, and execution of arbitrary commands.",
+        "impactAssessment": "Potential for complete system compromise, unauthorized administrative access, and arbitrary code execution with root privileges.",
+        "description": "Ivanti Sentry, formerly known as MobileIron Sentry, is an in-line gateway that manages, encrypts, and secures traffic between mobile devices and backend enterprise systems. Multiple critical vulnerabilities have been reported in Ivanti Sentry due to improper neutralization of special elements used in an operating system command and authentication bypass using an alternate path or channel. Successful exploitation of these vulnerabilities could allow a remote unauthenticated attacker to execute arbitrary code with root privileges, bypass authentication, create arbitrary administrative accounts, and gain full administrative access on the targeted system. Note: CVE-2026-10520 is being actively exploited in the wild.",
+        "recommendations": null,
+        "solution": "Upgrade to Ivanti Sentry versions 10.5.2, 10.6.2 or 10.7.1, as applicable, by applying the security updates provided by Ivanti immediately: https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523?language=en_US",
+        "references": "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523?language=en_US CVE Name CVE-2026-10520 CVE-2026-10523"
+      },
+      "fetched_at": "2026-07-16T08:01:01.115Z"
+    },
+    {
+      "id": "CIAD-2026-0034",
+      "type": "CIAD",
+      "title": "Multiple Vulnerabilities in SAP Products",
+      "date": "July 16, 2026",
+      "severity": "High",
+      "source_url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES02&VLCODE=CIAD-2026-0034",
+      "priority": "this-week",
+      "category": "Enterprise software",
+      "whoAffected": "SAP Basis administrators, SAP system administrators, SAP security teams, IT infrastructure teams, SAP application administrators, and developers managing or supporting affected SAP products and components.",
+      "whatItMeans": "Multiple vulnerabilities have been reported in SAP products which could allow an attacker to execute arbitrary code, perform HTTP request smuggling, SQL injection, cross-site scripting (XSS), open redirect, directory traversal, and DLL hijacking attacks, disclose sensitive information, bypass authorization checks, exploit security misconfigurations, or cause denial-of-service (DoS) conditions on the targeted system.",
+      "whatToDo": [
+        "Apply appropriate fixes as mentioned in SAP Security Advisory: https://support.sap.com/en/my-support/knowledge-base/security-notes-news/july-2026.html."
+      ],
+      "softwareAffected": "SAP S/4HANA including Project Management (PPM-PRO), Draft Operation, and Create Single Payment SAP NetWeaver Application Server (ABAP and Java) including Business Server Pages, Web Container, and Configuration Wizard SAP NetWeaver Enterprise Portal SAP Commerce Cloud SAP Approuter Library SAP Integration Suite (Edge Integration Cell) SAProuter (Microsoft Windows) SAP Change and Transport System (CTS) Attach Tool (ctsattach) SAP Fiori (Launchpad) SAP CRM (WebClient UI) SAP HANA Extended Application Services (XS Classic Model - User Self Service) UI5 Web Components Base (ui5/webcomponents-base)",
+      "sections": {
+        "softwareAffected": "SAP S/4HANA including Project Management (PPM-PRO), Draft Operation, and Create Single Payment SAP NetWeaver Application Server (ABAP and Java) including Business Server Pages, Web Container, and Configuration Wizard SAP NetWeaver Enterprise Portal SAP Commerce Cloud SAP Approuter Library SAP Integration Suite (Edge Integration Cell) SAProuter (Microsoft Windows) SAP Change and Transport System (CTS) Attach Tool (ctsattach) SAP Fiori (Launchpad) SAP CRM (WebClient UI) SAP HANA Extended Application Services (XS Classic Model - User Self Service) UI5 Web Components Base (ui5/webcomponents-base)",
+        "overview": "Multiple vulnerabilities have been reported in SAP products which could allow an attacker to execute arbitrary code, perform HTTP request smuggling, SQL injection, cross-site scripting (XSS), open redirect, directory traversal, and DLL hijacking attacks, disclose sensitive information, bypass authorization checks, exploit security misconfigurations, or cause denial-of-service (DoS) conditions on the targeted system.",
+        "targetAudience": "SAP Basis administrators, SAP system administrators, SAP security teams, IT infrastructure teams, SAP application administrators, and developers managing or supporting affected SAP products and components.",
+        "riskAssessment": "High risk of unauthorized access, execution of arbitrary code or commands, disclosure of sensitive information, authentication and authorization bypass, and compromise of affected SAP systems.",
+        "impactAssessment": "Potential remote code execution, unauthorized access, information disclosure, data compromise, and disruption of affected SAP systems.",
+        "description": "Multiple vulnerabilities have been reported in SAP products; Details of which are provided below:",
+        "recommendations": null,
+        "solution": "Apply appropriate fixes as mentioned in SAP Security Advisory: https://support.sap.com/en/my-support/knowledge-base/security-notes-news/july-2026.html",
+        "references": "SAP https://support.sap.com/en/my-support/knowledge-base/security-notes-news/july-2026.html CVE Name CVE-2026-44747 CVE-2026-27690 CVE-2026-44761 CVE-2026-40128 CVE-2026-40860 CVE-2026-40453 CVE-2026-33454 CVE-2026-0487 CVE-2026-44752 CVE-2026-44745 CVE-2026-43512 CVE-2026-41293 CVE-2026-43515 CVE-2026-58233 CVE-2026-44759 CVE-2026-44767 CVE-2026-44769 CVE-2026-44760 CVE-2026-44771 CVE-2026-44770 CVE-2026-24315 CVE-2026-44768 CVE-2026-44753 CVE-2025-68161"
+      },
+      "fetched_at": "2026-07-16T08:01:02.336Z"
+    },
+    {
+      "id": "CIAD-2026-0033",
+      "type": "CIAD",
+      "title": "Multiple vulnerabilities in Apple Products",
+      "date": "June 30, 2026",
+      "severity": "Critical",
+      "source_url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES02&VLCODE=CIAD-2026-0033",
+      "priority": "act-now",
+      "category": "Other software",
+      "whoAffected": "All individual and organizations using Apple Products.",
+      "whatItMeans": "Multiple vulnerabilities have been reported in Apple products which could allow an attacker to disclose sensitive information, gain elevated privileges, bypass security restrictions, execute arbitrary code, perform cross-origin data exfiltration, and cause denial-of-service (DoS) condition on the targeted system.",
+      "whatToDo": [
+        "Apply appropriate updates as mentioned by the vendor: https://support.apple.com/en-us/127594 https://support.apple.com/en-us/127595 https://support.apple.com/en-us/127685."
+      ],
+      "softwareAffected": "Apple iOS versions prior to 26.5.2 Apple iPadOS versions prior to 26.5.2 Apple macOS Tahoe versions prior to 26.5.2 Apple Safari versions prior to 26.5.2",
+      "sections": {
+        "softwareAffected": "Apple iOS versions prior to 26.5.2 Apple iPadOS versions prior to 26.5.2 Apple macOS Tahoe versions prior to 26.5.2 Apple Safari versions prior to 26.5.2",
+        "overview": "Multiple vulnerabilities have been reported in Apple products which could allow an attacker to disclose sensitive information, gain elevated privileges, bypass security restrictions, execute arbitrary code, perform cross-origin data exfiltration, and cause denial-of-service (DoS) condition on the targeted system.",
+        "targetAudience": "All individual and organizations using Apple Products.",
+        "riskAssessment": "High risk of sensitive information disclosure, privilege escalation, disruption of services.",
+        "impactAssessment": "Potential for full system compromise, remote code execution, service unavailability.",
+        "description": "Multiple vulnerabilities have been reported in Apple products:",
+        "recommendations": null,
+        "solution": "Apply appropriate updates as mentioned by the vendor: https://support.apple.com/en-us/127594 https://support.apple.com/en-us/127595 https://support.apple.com/en-us/127685",
+        "references": "Apple https://support.apple.com/en-us/127594 https://support.apple.com/en-us/127595 https://support.apple.com/en-us/127685"
+      },
+      "fetched_at": "2026-07-16T08:01:03.982Z"
+    },
+    {
+      "id": "CIAD-2026-0032",
+      "type": "CIAD",
+      "title": "Multiple Vulnerabilities in Oracle Products",
+      "date": "June 18, 2026",
+      "severity": "Critical",
+      "source_url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES02&VLCODE=CIAD-2026-0032",
+      "priority": "act-now",
+      "category": "Enterprise software",
+      "whoAffected": "Individuals and organisational users of the above-mentioned Oracle products.",
+      "whatItMeans": "Multiple vulnerabilities have been reported in various Oracle products which could allow a remote attacker to execute arbitrary code, gain elevated access, trigger denial of service condition, gain unauthorized access to sensitive information, manipulate data and bypass security restriction on the targeted system.",
+      "whatToDo": [
+        "Apply the security updates released by Microsoft: https://www.oracle.com/security-alerts/cspujun2026.html."
+      ],
+      "softwareAffected": "Oracle Communications Oracle E-Business Suite Oracle Enterprise Manager Oracle Fusion Middleware Oracle JD Edwards EnterpriseOne Oracle MySQL Oracle PeopleSoft Oracle Siebel CRM Oracle Supply Chain Products Oracle Solaris Oracle VM VirtualBox For complete list of affected products refer to the oracle advisory: https://www.oracle.com/security-alerts/cspujun2026.html",
+      "sections": {
+        "softwareAffected": "Oracle Communications Oracle E-Business Suite Oracle Enterprise Manager Oracle Fusion Middleware Oracle JD Edwards EnterpriseOne Oracle MySQL Oracle PeopleSoft Oracle Siebel CRM Oracle Supply Chain Products Oracle Solaris Oracle VM VirtualBox For complete list of affected products refer to the oracle advisory: https://www.oracle.com/security-alerts/cspujun2026.html",
+        "overview": "Multiple vulnerabilities have been reported in various Oracle products which could allow a remote attacker to execute arbitrary code, gain elevated access, trigger denial of service condition, gain unauthorized access to sensitive information, manipulate data and bypass security restriction on the targeted system.",
+        "targetAudience": "Individuals and organisational users of the above-mentioned Oracle products.",
+        "riskAssessment": "High risk of arbitrary code execution, unauthorized access, denial of service, data manipulation, information disclosure and privilege escalation.",
+        "impactAssessment": "Potential for unauthorized access to sensitive information, denial of service, data manipulation, privilege escalation and full system compromise.",
+        "description": "Oracle products are used for several applications including enterprise-level data management, cloud solutions, software development, and business applications. They are employed across a wide range of sectors, including finance, healthcare, manufacturing, government, and retail, among others. Multiple vulnerabilities have been reported in various components of Oracle products. Successful exploitation of these vulnerabilities could allow an attacker to execute arbitrary code, gain elevated access, trigger denial of service condition, gain unauthorized access to sensitive information, manipulate data and bypass security restrictions on the targeted system. For complete list of affected products, CVEs, workarounds and solutions, refer to the oracle advisory: https://www.oracle.com/security-alerts/cspujun2026.html",
+        "recommendations": null,
+        "solution": "Apply the security updates released by Microsoft: https://www.oracle.com/security-alerts/cspujun2026.html",
+        "references": "Oracle https://www.oracle.com/security-alerts/cspujun2026.html"
+      },
+      "fetched_at": "2026-07-16T08:01:05.495Z"
+    }
+  ]
+}

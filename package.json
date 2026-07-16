@@ -1,0 +1,23 @@
+{
+  "name": "cert-in-community-brief",
+  "version": "1.0.0",
+  "description": "Community threat brief built from CERT-In public advisories (Node.js, zero dependencies).",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "brief": "node scripts/certin/build.js",
+    "brief:init": "node scripts/certin/build.js --init",
+    "brief:refresh": "node scripts/certin/build.js --refresh",
+    "serve": "node server.js"
+  },
+  "keywords": [
+    "cert-in",
+    "cybersecurity",
+    "threat-intelligence",
+    "india"
+  ],
+  "license": "MIT"
+}

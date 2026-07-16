@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>About - CERT-In Community Threat Brief</title>
+<meta name="description" content="How the CERT-In Community Threat Brief works and where its data comes from." />
+<style>
+  :root{
+    --bg:#ffffff;--surface:#ffffff;--surface2:#f4f7f5;--line:#e2e8e4;
+    --ink:#182420;--muted:#5c6b62;--brand:#1f7a52;--brand-ink:#ffffff;
+    --radius:14px;--shadow:0 1px 2px rgba(20,40,30,.05),0 1px 8px rgba(20,40,30,.04);
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Segoe UI",system-ui,-apple-system,sans-serif;line-height:1.6;
+    overflow-wrap:break-word}
+  a{color:var(--brand);font-weight:600;text-decoration:none}
+  a:hover{text-decoration:underline}
+  code{font-family:Consolas,"Courier New",monospace;font-size:.85em;
+    background:var(--surface2);padding:.1rem .35rem;border-radius:5px;word-break:break-all}
+  .wrap{max-width:860px;margin:0 auto;padding:0 1.1rem}
+  header.hero{padding:2.4rem 0 1rem}
+  .kicker{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)}
+  .hero h1{margin:.4rem 0 .5rem;font-size:clamp(1.6rem,4vw,2.2rem);letter-spacing:-.02em}
+  .hero p.lead{margin:0;color:var(--muted);max-width:46rem}
+  .nav{margin-top:1rem;font-size:.9rem}
+  .nav a{margin-right:1.2rem}
+  section.block{background:var(--surface);border:1px solid var(--line);
+    border-radius:var(--radius);padding:1.2rem 1.3rem;margin:1.1rem 0;
+    box-shadow:var(--shadow)}
+  section.block h2{margin:0 0 .8rem;font-size:1.1rem}
+  section.block h3{margin:1rem 0 .3rem;font-size:.98rem}
+  p{margin:0 0 .7rem}
+  table{width:100%;border-collapse:collapse;font-size:.88rem}
+  th,td{text-align:left;padding:.55rem .4rem;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.04em}
+  ul,ol{margin:.3rem 0 .6rem;padding-left:1.2rem}
+  li{margin-bottom:.35rem}
+  .flow{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;font-size:.9rem;margin:.4rem 0}
+  .node{display:inline-block;padding:.4rem .7rem;border-radius:8px;font-weight:600;
+    background:var(--surface2);border:1px solid var(--line)}
+  .arrow{color:var(--muted);font-weight:700}
+  .disclaimer{background:var(--surface2);border:1px solid var(--line);border-radius:10px;
+    padding:.8rem .95rem;font-size:.86rem;color:var(--muted)}
+  footer{color:var(--muted);font-size:.82rem;padding:2rem 0 3rem;border-top:1px solid var(--line);margin-top:1.5rem}
+  .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  @media (max-width:720px){
+    .wrap{padding:0 .9rem}
+    header.hero{padding:1.6rem 0 1rem}
+    section.block{padding:1rem 1rem}
+    .nav a{display:inline-block;margin:0 1rem .4rem 0}
+    table{min-width:520px}
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <p class="kicker">About this project</p>
+      <h1>How the CERT-In Community Brief works</h1>
+      <p class="lead">This project reorganizes India's official CERT-In cybersecurity
+        advisories into a clean, plain-language page. Here is where the data comes from
+        and how it stays trustworthy.</p>
+      <p class="nav">
+        <a href="/">&larr; Back to the brief</a>
+        <a href="https://www.cert-in.org.in/" target="_blank" rel="noopener">CERT-In official site</a>
+      </p>
+    </header>
+
+    <section class="block">
+      <h2>1. Why CERT-In is hard to read directly</h2>
+      <p>The CERT-In homepage loads through an old <code>&lt;frameset&gt;</code> shell, so
+        "View Source" looks almost empty. The real content is served by a Java servlet
+        (<code>s2cMainServlet</code>) and dumped into table-heavy pages with no clean feed
+        (no RSS or public API). That is why the raw site feels confusing.</p>
+      <div class="flow">
+        <span class="node">frameset shell</span>
+        <span class="arrow">&rarr;</span>
+        <span class="node">s2cMainServlet</span>
+        <span class="arrow">&rarr;</span>
+        <span class="node">pageid + code</span>
+        <span class="arrow">&rarr;</span>
+        <span class="node">this brief</span>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>2. The stable URL pattern we rely on</h2>
+      <p>CERT-In keeps the same URL structure; only the IDs and content change. We use that
+        to detect what is new.</p>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th>Content type</th><th>URL pattern</th></tr></thead>
+        <tbody>
+          <tr><td>Advisory (CIAD)</td><td><code>?pageid=PUBVLNOTES02&amp;VLCODE=CIAD-...</code></td></tr>
+          <tr><td>Vulnerability note (CIVN)</td><td><code>?pageid=PUBVLNOTES01&amp;VLCODE=CIVN-...</code></td></tr>
+          <tr><td>Current activity (CICA)</td><td><code>?pageid=PUBADV01&amp;CACODE=CICA-...</code></td></tr>
+          <tr><td>Advisory year list</td><td><code>?pageid=PUBADVLIST02&amp;year=2026</code></td></tr>
+          <tr><td>Vuln note year list</td><td><code>?pageid=VLNLIST02&amp;year=2026</code></td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>3. How the brief is built</h2>
+      <ol>
+        <li>Check the CERT-In list pages for the current year.</li>
+        <li>Compare the IDs found against the ones we have already processed.</li>
+        <li>Fetch only the new advisory / note / activity detail pages.</li>
+        <li>Extract the official sections: overview, risk, impact, recommendations, solution.</li>
+        <li>Condense them into plain language: who is affected, what it means, what to do.</li>
+        <li>Rebuild this page and a machine-readable <a href="data/brief.json">brief.json</a>.</li>
+      </ol>
+      <p>The whole pipeline is Node.js with no external dependencies, so it runs anywhere
+        Node runs. Run it with <code>npm run brief</code> on a daily or weekly schedule.</p>
+    </section>
+
+    <section class="block">
+      <h2>4. Trust and accuracy</h2>
+      <div class="disclaimer">
+        <p><strong>CERT-In is the only source.</strong> Every item links back to its official
+          CERT-In page. Summaries are condensed from CERT-In's own words; we do not add facts.</p>
+        <p>This is a community project for readability. It is <strong>not</strong> an official
+          CERT-In publication. Always confirm details on the linked official page before acting.</p>
+      </div>
+    </section>
+
+    <footer>
+      Community Threat Brief &middot; Source:
+      <a href="https://www.cert-in.org.in/s2cMainServlet?pageid=PUBWEL01" target="_blank" rel="noopener">CERT-In</a>
+    </footer>
+  </div>
+</body>
+</html>
