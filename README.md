@@ -40,7 +40,7 @@ npm run brief        # populates data/ and builds public/threat-brief.html
 npm run serve        # open http://localhost:3000
 ```
 
-After that, just run `npm run brief` on a schedule.
+After that, run `npm run brief` whenever you want new CERT-In data, then commit and push.
 
 ## What it tracks
 
@@ -125,47 +125,35 @@ Settings to use:
 | Start command | `npm start` |
 | Build command | *(leave empty - nothing to build)* |
 | Node version | 18, 20, 22 or 24 |
-| Env var (optional) | `BRIEF_AUTORUN=1` for self-refresh |
+| Env var (optional) | leave unset (update the brief manually) |
 
 `server.js` reads Hostinger's `PORT` automatically. The repo already ships a
 built `public/`, so the site shows content on the first deploy.
 
 **Recommended: GitHub deploy.** Push the repo, connect it in hPanel, and every
-`git push` (including the daily GitHub Action commit) auto-redeploys.
+`git push` auto-redeploys.
 
-Keep it fresh with either:
-- **Self-refresh:** set `BRIEF_AUTORUN=1` (optional `BRIEF_INTERVAL_HOURS=24`).
-  The running app rebuilds the brief on a schedule in the same process.
-- **GitHub Actions:** `.github/workflows/update-brief.yml` rebuilds daily and
-  commits the refreshed `public/` + `data/`, which triggers a redeploy.
+Keep it fresh manually:
+1. Run `npm run brief` on your PC
+2. Commit and push `data/` + `public/`
+3. Hostinger redeploys from GitHub
 
 Live pages: `/` (the brief) and `/about`, with data at `/data/brief.json`.
 
 To mount it under a subpath of an existing Express site instead, use Option B above.
 
-## Keeping it fresh (no Python needed)
+## Keeping it fresh
 
-Choose whichever fits your host:
+No automatic GitHub updates. When CERT-In publishes new alerts:
 
-1. **System cron (recommended if you have shell access)**
+```bash
+npm run brief
+git add data public
+git commit -m "Update CERT-In brief"
+git push
+```
 
-   ```
-   30 3 * * *  cd /path/to/cert_project && /usr/bin/node scripts/certin/build.js
-   ```
-
-   (03:30 UTC = 09:00 IST daily.)
-
-2. **In-process worker** (host runs a long-lived Node process):
-
-   ```bash
-   BRIEF_INTERVAL_HOURS=24 node scripts/worker.js
-   ```
-
-   Or import and start it from your existing app.
-
-3. **GitHub Actions** (if your host only serves static files): see
-   `.github/workflows/update-brief.yml`. It rebuilds daily and commits the
-   refreshed `public/` and `data/` files, which your host can then deploy.
+That is enough. Optional: run the same `npm run brief` on a server cron if you prefer not to push from your PC.
 
 ## Data files (`data/`)
 

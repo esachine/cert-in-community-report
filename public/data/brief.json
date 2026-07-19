@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-07-18T05:47:29.894Z",
+  "generated_at": "2026-07-19T10:01:14.334Z",
   "source": "https://www.cert-in.org.in/",
   "disclaimer": "Community brief. Data reorganized from public CERT-In advisories. Not an official CERT-In publication.",
-  "last_check": "2026-07-18T05:47:29.892Z",
-  "new_count": 4,
+  "last_check": "2026-07-19T10:01:14.323Z",
+  "new_count": 0,
   "count": 6,
   "items": [
     {
@@ -32,7 +32,7 @@
         "solution": "Apply appropriate updates as mentioned: https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-1-2-released/",
         "references": "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-1-2-released/ CVE Name CVE-2026-6896 CVE-2026-13320 CVE-2026-11827 CVE-2026-8472 CVE-2026-7492 CVE-2025-12506 CVE-2026-13151 CVE-2026-6352"
       },
-      "fetched_at": "2026-07-18T05:47:24.753Z"
+      "fetched_at": "2026-07-18T02:34:49.517Z"
     },
     {
       "id": "CIVN-2026-0367",
@@ -60,7 +60,7 @@
         "solution": "Upgrade to the latest versions as mentioned in the security advisories: https://www.drupal.org/sa-core-2026-010 https://www.drupal.org/sa-core-2026-011 https://www.drupal.org/sa-core-2026-012",
         "references": "Drupal https://www.drupal.org/sa-core-2026-010 https://www.drupal.org/sa-core-2026-011 https://www.drupal.org/sa-core-2026-012 CVE Name CVE-2026-15916 CVE-2026-15917 CVE-2026-55805"
       },
-      "fetched_at": "2026-07-18T05:47:26.152Z"
+      "fetched_at": "2026-07-18T02:34:50.899Z"
     },
     {
       "id": "CIVN-2026-0366",
@@ -88,7 +88,7 @@
         "solution": "Apply appropriate updates as mentioned by the vendor: https://www.drupal.org/sa-contrib-2026-065 https://www.drupal.org/sa-contrib-2026-066 https://www.drupal.org/sa-contrib-2026-067 https://www.drupal.org/sa-contrib-2026-068 https://www.drupal.org/sa-contrib-2026-069",
         "references": "Drupal https://www.drupal.org/sa-contrib-2026-065 https://www.drupal.org/sa-contrib-2026-066 https://www.drupal.org/sa-contrib-2026-067 https://www.drupal.org/sa-contrib-2026-068 https://www.drupal.org/sa-contrib-2026-069 CVE Name CVE-2026-58587 CVE-2026-58588 CVE-2026-58589 CVE-2026-58590 CVE-2026-58591"
       },
-      "fetched_at": "2026-07-18T05:47:27.551Z"
+      "fetched_at": "2026-07-18T02:34:52.310Z"
     },
     {
       "id": "CIAD-2026-0035",
@@ -116,7 +116,7 @@
         "solution": "Apply appropriate security updates as mentioned in https://msrc.microsoft.com/update-guide/releaseNote/2026-Jul",
         "references": "https://msrc.microsoft.com/update-guide/releaseNote/2026-Jul"
       },
-      "fetched_at": "2026-07-18T05:47:28.891Z"
+      "fetched_at": "2026-07-18T02:34:53.707Z"
     },
     {
       "id": "CIAD-2026-0034",
