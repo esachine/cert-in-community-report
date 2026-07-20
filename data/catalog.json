@@ -1,6 +1,34 @@
 {
-  "updated_at": "2026-07-19T10:01:14.311Z",
+  "updated_at": "2026-07-20T10:24:20.941Z",
   "items": [
+    {
+      "id": "CIVN-2026-0369",
+      "type": "CIVN",
+      "title": "Multiple Vulnerabilities in Apache Tomcat",
+      "date": "July 20, 2026",
+      "severity": "Critical",
+      "source_url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES01&VLCODE=CIVN-2026-0369",
+      "priority": "act-now",
+      "category": "Enterprise software",
+      "whoAffected": "All end user organizations and individuals responsible for maintaining and updating Apache Tomcat.",
+      "whatItMeans": "Multiple vulnerabilities have been reported in Apache Tomcat that could allow an attacker to bypass security restrictions or gain unauthorized access to protected resources on the affected system.",
+      "whatToDo": [
+        "Apply appropriate fixes as mentioned in the Apache Tomcat Security Updates: https://tomcat.apache.org/security-11.html#Fixed_in_Apache_Tomcat_11.0.24 https://tomcat.apache.org/security-10.html#Fixed_in_Apache_Tomcat_10.1.57 https://tomcat.apache.org/security-9.html#Fixed_in_Apache_Tomcat_9.0.120 https://tomcat.apache.org/security-8.html https://tomcat.apache.org/security-7.html."
+      ],
+      "softwareAffected": "Apache Tomcat 11 versions prior to 11.0.24 Apache Tomcat 10.1 versions prior to 10.1.57 Apache Tomcat 9 versions prior to 9.0.120 Apache Tomcat versions 8.5.38 through 8.5.100 Apache Tomcat versions 7.0.100 through 7.0.109",
+      "sections": {
+        "softwareAffected": "Apache Tomcat 11 versions prior to 11.0.24 Apache Tomcat 10.1 versions prior to 10.1.57 Apache Tomcat 9 versions prior to 9.0.120 Apache Tomcat versions 8.5.38 through 8.5.100 Apache Tomcat versions 7.0.100 through 7.0.109",
+        "overview": "Multiple vulnerabilities have been reported in Apache Tomcat that could allow an attacker to bypass security restrictions or gain unauthorized access to protected resources on the affected system.",
+        "targetAudience": "All end user organizations and individuals responsible for maintaining and updating Apache Tomcat.",
+        "riskAssessment": "Risk of security constraint bypass, unauthorized access, and insecure cluster communication configuration.",
+        "impactAssessment": "Potential for unauthorized access to protected resources and weakened security of encrypted Tomcat cluster communications.",
+        "description": "Apache Tomcat is an open-source web server and servlet container used to deploy Java-based web applications. Multiple vulnerabilities have been identified in Apache Tomcat due to improper handling of URL encoding (hex encoding) in the RewriteValve component and insufficient technical documentation for securely configuring the EncryptInterceptor component. Successful exploitation of these vulnerabilities could allow an attacker to bypass security restrictions or gain unauthorized access to protected resources on the affected system.",
+        "recommendations": null,
+        "solution": "Apply appropriate fixes as mentioned in the Apache Tomcat Security Updates: https://tomcat.apache.org/security-11.html#Fixed_in_Apache_Tomcat_11.0.24 https://tomcat.apache.org/security-10.html#Fixed_in_Apache_Tomcat_10.1.57 https://tomcat.apache.org/security-9.html#Fixed_in_Apache_Tomcat_9.0.120 https://tomcat.apache.org/security-8.html https://tomcat.apache.org/security-7.html",
+        "references": "https://tomcat.apache.org/security-11.html#Fixed_in_Apache_Tomcat_11.0.24 https://tomcat.apache.org/security-10.html#Fixed_in_Apache_Tomcat_10.1.57 https://tomcat.apache.org/security-9.html#Fixed_in_Apache_Tomcat_9.0.120 https://tomcat.apache.org/security-8.html https://tomcat.apache.org/security-7.html CVE Name CVE-2026-59083 CVE-2026-59084"
+      },
+      "fetched_at": "2026-07-20T10:24:19.936Z"
+    },
     {
       "id": "CIVN-2026-0368",
       "type": "CIVN",
@@ -56,34 +84,6 @@
         "references": "Drupal https://www.drupal.org/sa-core-2026-010 https://www.drupal.org/sa-core-2026-011 https://www.drupal.org/sa-core-2026-012 CVE Name CVE-2026-15916 CVE-2026-15917 CVE-2026-55805"
       },
       "fetched_at": "2026-07-18T02:34:50.899Z"
-    },
-    {
-      "id": "CIVN-2026-0366",
-      "type": "CIVN",
-      "title": "Multiple vulnerabilities in Drupal products",
-      "date": "July 17, 2026",
-      "severity": "High",
-      "source_url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES01&VLCODE=CIVN-2026-0366",
-      "priority": "this-week",
-      "category": "Websites & CMS",
-      "whoAffected": "All end-user organizations and individuals using the affected Drupal plugins.",
-      "whatItMeans": "Multiple vulnerabilities have been reported in Drupal plugins, which could allow an attacker to perform cross-site scripting (XSS) attacks, bypass access restrictions, upload malicious files, and execute unauthorized access on the targeted system.",
-      "whatToDo": [
-        "Apply appropriate updates as mentioned by the vendor: https://www.drupal.org/sa-contrib-2026-065 https://www.drupal.org/sa-contrib-2026-066 https://www.drupal.org/sa-contrib-2026-067 https://www.drupal.org/sa-contrib-2026-068 https://www.drupal.org/sa-contrib-2026-069."
-      ],
-      "softwareAffected": "Drupal Canvas AI submodule versions prior to 1.4.2, 1.5.0 to 1.5.1, 1.6.0, and 1.7.1. FlowDrop module versions prior to 1.6.0. Colorbox module versions prior to 2.1.5 and 2.2.1.",
-      "sections": {
-        "softwareAffected": "Drupal Canvas AI submodule versions prior to 1.4.2, 1.5.0 to 1.5.1, 1.6.0, and 1.7.1. FlowDrop module versions prior to 1.6.0. Colorbox module versions prior to 2.1.5 and 2.2.1.",
-        "overview": "Multiple vulnerabilities have been reported in Drupal plugins, which could allow an attacker to perform cross-site scripting (XSS) attacks, bypass access restrictions, upload malicious files, and execute unauthorized access on the targeted system.",
-        "targetAudience": "All end-user organizations and individuals using the affected Drupal plugins.",
-        "riskAssessment": "Risk of cross-site scripting attacks, bypass access restrictions, execution malicious file upload, and execute unauthorized access.",
-        "impactAssessment": "Potential for unauthorized access to sensitive information, data theft, malicious file uploads, and full compromise of the affected system.",
-        "description": "Drupal is an open-source Content Management System (CMS) which allows individuals and organizations to create, manage and maintain websites and web applications. Multiple vulnerabilities exist in Drupal Core due to improper validation, improper access control, and improper sanitization of user supplied input. Successful exploitation of these vulnerabilities could allow could allow an attacker to perform cross-site scripting (XSS) attacks, bypass access restrictions, upload malicious files, and execute unauthorized access on the targeted system.",
-        "recommendations": null,
-        "solution": "Apply appropriate updates as mentioned by the vendor: https://www.drupal.org/sa-contrib-2026-065 https://www.drupal.org/sa-contrib-2026-066 https://www.drupal.org/sa-contrib-2026-067 https://www.drupal.org/sa-contrib-2026-068 https://www.drupal.org/sa-contrib-2026-069",
-        "references": "Drupal https://www.drupal.org/sa-contrib-2026-065 https://www.drupal.org/sa-contrib-2026-066 https://www.drupal.org/sa-contrib-2026-067 https://www.drupal.org/sa-contrib-2026-068 https://www.drupal.org/sa-contrib-2026-069 CVE Name CVE-2026-58587 CVE-2026-58588 CVE-2026-58589 CVE-2026-58590 CVE-2026-58591"
-      },
-      "fetched_at": "2026-07-18T02:34:52.310Z"
     },
     {
       "id": "CIAD-2026-0035",
