@@ -1,6 +1,34 @@
 {
-  "updated_at": "2026-07-21T06:03:08.277Z",
+  "updated_at": "2026-07-21T11:01:59.848Z",
   "items": [
+    {
+      "id": "CIVN-2026-0371",
+      "type": "CIVN",
+      "title": "Multiple Vulnerabilities in SonicWall",
+      "date": "July 21, 2026",
+      "severity": "Critical",
+      "source_url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES01&VLCODE=CIVN-2026-0371",
+      "priority": "act-now",
+      "category": "Network & security gear",
+      "whoAffected": "All end-user organizations and individuals using SonicWall Secure Mobile Access (SMA) 1000 Series appliances.",
+      "whatItMeans": "Multiple vulnerabilities have been reported in SonicWall Secure Mobile Access (SMA) 1000 Series appliances, which could allow a remote attacker to perform Server-Side Request Forgery (SSRF) or execute arbitrary operating system commands on the affected systems.",
+      "whatToDo": [
+        "Apply appropriate security updates and mitigations as recommended by the vendor. https://www.sonicwall.com/support/notices/product-notice-sma-1000-series-affected-by-multiple-vulnerabilities/kA1VN000001nv6D0AQ https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0008."
+      ],
+      "softwareAffected": "SonicWall Secure Mobile Access (SMA) 1000 Series appliances",
+      "sections": {
+        "softwareAffected": "SonicWall Secure Mobile Access (SMA) 1000 Series appliances",
+        "overview": "Multiple vulnerabilities have been reported in SonicWall Secure Mobile Access (SMA) 1000 Series appliances, which could allow a remote attacker to perform Server-Side Request Forgery (SSRF) or execute arbitrary operating system commands on the affected systems.",
+        "targetAudience": "All end-user organizations and individuals using SonicWall Secure Mobile Access (SMA) 1000 Series appliances.",
+        "riskAssessment": "Risk of arbitrary operating system command execution, Server-Side Request Forgery (SSRF), and compromise of affected systems.",
+        "impactAssessment": "Potential for unauthorized requests to internal or unintended locations, arbitrary operating system command execution with administrative privileges, unauthorized access to resources reachable through the appliance and compromise of affected appliances.",
+        "description": "SonicWall Secure Mobile Access (SMA) 1000 Series appliances are secure remote access solutions used to provide secure access to enterprise networks and applications. Multiple vulnerabilities have been identified in SonicWall Secure Mobile Access (SMA) 1000 Series appliances. These vulnerabilities include a Server-Side Request Forgery (SSRF) vulnerability and a post-authentication Code Injection vulnerability. Successful exploitation of these vulnerabilities could allow an attacker to access internal or unintended network locations, execute arbitrary operating system commands and compromise the affected appliance. Note: CVE-2026-15409 and CVE-2026-15410 are being actively exploited in the wild.",
+        "recommendations": null,
+        "solution": "Apply appropriate security updates and mitigations as recommended by the vendor. https://www.sonicwall.com/support/notices/product-notice-sma-1000-series-affected-by-multiple-vulnerabilities/kA1VN000001nv6D0AQ https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0008",
+        "references": "https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-sma1000-flaws-exploited-in-zero-day-attacks-patch-now/ https://www.sonicwall.com/support/notices/product-notice-sma-1000-series-affected-by-multiple-vulnerabilities/kA1VN000001nv6D0AQ https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0008 CVE Name CVE-2026-15409 CVE-2026-15410"
+      },
+      "fetched_at": "2026-07-21T11:01:58.841Z"
+    },
     {
       "id": "CIVN-2026-0370",
       "type": "CIVN",
@@ -56,34 +84,6 @@
         "references": "https://tomcat.apache.org/security-11.html#Fixed_in_Apache_Tomcat_11.0.24 https://tomcat.apache.org/security-10.html#Fixed_in_Apache_Tomcat_10.1.57 https://tomcat.apache.org/security-9.html#Fixed_in_Apache_Tomcat_9.0.120 https://tomcat.apache.org/security-8.html https://tomcat.apache.org/security-7.html CVE Name CVE-2026-59083 CVE-2026-59084"
       },
       "fetched_at": "2026-07-20T10:24:19.936Z"
-    },
-    {
-      "id": "CIVN-2026-0368",
-      "type": "CIVN",
-      "title": "Multiple Vulnerabilities in GitLab Community Edition (CE) and Enterprise Edition (EE)",
-      "date": "July 17, 2026",
-      "severity": "High",
-      "source_url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES01&VLCODE=CIVN-2026-0368",
-      "priority": "this-week",
-      "category": "Other software",
-      "whoAffected": "All organizations and individuals using self-managed GitLab installations.",
-      "whatItMeans": "Multiple vulnerabilities have been reported in GitLab that could be exploited by an attacker to execute arbitrary scripts, perform Cross-Site Scripting (XSS) attacks, gain unauthorized access to protected resources, and perform unauthorized actions on the targeted system.",
-      "whatToDo": [
-        "Apply appropriate updates as mentioned: https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-1-2-released/."
-      ],
-      "softwareAffected": "GitLab Community Edition (CE) and Enterprise Edition (EE) versions prior to 18.11.7, 19.0.4 and 19.1.2",
-      "sections": {
-        "softwareAffected": "GitLab Community Edition (CE) and Enterprise Edition (EE) versions prior to 18.11.7, 19.0.4 and 19.1.2",
-        "overview": "Multiple vulnerabilities have been reported in GitLab that could be exploited by an attacker to execute arbitrary scripts, perform Cross-Site Scripting (XSS) attacks, gain unauthorized access to protected resources, and perform unauthorized actions on the targeted system.",
-        "targetAudience": "All organizations and individuals using self-managed GitLab installations.",
-        "riskAssessment": "High risk of cross-site scripting, sensitive information disclosure, credential exposure and unauthorized modification of settings or records.",
-        "impactAssessment": "Potential for sensitive data theft, confidential information disclosure, session compromise through Cross-Site Scripting (XSS), unauthorized modification of settings or records, exposure of stored credentials, repository content manipulation, and loss of data integrity.",
-        "description": "GitLab is a web-based DevOps platform that provides tools for software development, including source code management, continuous integration and continuous deployment. It is available as Community Edition (CE) and Enterprise Edition (EE). Multiple vulnerabilities exist in GitLab due to improper sanitization of user-supplied input, insufficient authorization controls, missing access-control checks and improper handling of Git reference name resolution. An attacker could exploit these vulnerabilities by sending specially crafted requests or supplying malicious input to the targeted system. Successful exploitation of these vulnerabilities could allow an attacker to arbitrary scripts, perform Cross-Site Scripting (XSS) attacks, gain unauthorized access to protected resources, and perform unauthorized actions on the targeted system.",
-        "recommendations": null,
-        "solution": "Apply appropriate updates as mentioned: https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-1-2-released/",
-        "references": "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-1-2-released/ CVE Name CVE-2026-6896 CVE-2026-13320 CVE-2026-11827 CVE-2026-8472 CVE-2026-7492 CVE-2025-12506 CVE-2026-13151 CVE-2026-6352"
-      },
-      "fetched_at": "2026-07-18T02:34:49.517Z"
     },
     {
       "id": "CIAD-2026-0035",
