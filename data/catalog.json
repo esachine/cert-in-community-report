@@ -1,6 +1,34 @@
 {
-  "updated_at": "2026-07-20T10:24:20.941Z",
+  "updated_at": "2026-07-21T06:03:08.277Z",
   "items": [
+    {
+      "id": "CIVN-2026-0370",
+      "type": "CIVN",
+      "title": "Multiple Vulnerabilities in VMware Avi Load Balancer",
+      "date": "July 21, 2026",
+      "severity": "Critical",
+      "source_url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES01&VLCODE=CIVN-2026-0370",
+      "priority": "act-now",
+      "category": "Enterprise software",
+      "whoAffected": "Enterprises and large organisations, cloud service providers and industries with IT environments utilizing VMware Avi Load Balancer.",
+      "whatItMeans": "Multiple vulnerabilities have been reported in VMware Avi Load Balancer, which could allow an attacker to gain unauthorised access, escalate privileges, execute arbitrary code, and gain access to sensitive information on the targeted system.",
+      "whatToDo": [
+        "Apply appropriate updates as mentioned by the vendor: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/37926."
+      ],
+      "softwareAffected": "VMware Avi Load Balancer version 31.1.1 - 31.2.2 VMware Avi Load Balancer version 30.1.1 - 30.2.6 VMware Avi Load Balancer version 22.1.1 - 22.1.7 VMware Avi Load Balancer version 32.1.1",
+      "sections": {
+        "softwareAffected": "VMware Avi Load Balancer version 31.1.1 - 31.2.2 VMware Avi Load Balancer version 30.1.1 - 30.2.6 VMware Avi Load Balancer version 22.1.1 - 22.1.7 VMware Avi Load Balancer version 32.1.1",
+        "overview": "Multiple vulnerabilities have been reported in VMware Avi Load Balancer, which could allow an attacker to gain unauthorised access, escalate privileges, execute arbitrary code, and gain access to sensitive information on the targeted system.",
+        "targetAudience": "Enterprises and large organisations, cloud service providers and industries with IT environments utilizing VMware Avi Load Balancer.",
+        "riskAssessment": "Risk of full system compromise, sensitive information disclosure and lateral movement.",
+        "impactAssessment": "Potential for local privilege escalation, disclosure of sensitive information and unauthorised access.",
+        "description": "VMware Avi Load Balancer is a software-defined, multi-cloud application delivery controller that provides elastic load balancing, application security (WAF), and observability for containerized, virtualised, and bare-metal workloads. Multiple vulnerabilities exist in VMware Avi Load Balancer due to improper authentication, insufficient input validation, improper privilege management and file path validation issues. An attacker may exploit these vulnerabilities by sending specially crafted requests. Successful exploitation of these vulnerabilities could allow an attacker to gain unauthorised access, escalate privileges, execute arbitrary code, and gain access to sensitive information on the targeted system.",
+        "recommendations": null,
+        "solution": "Apply appropriate updates as mentioned by the vendor: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/37926",
+        "references": "VMware https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/37926 CVE Name CVE-2026-47865 CVE-2026-47866 CVE-2026-47867 CVE-2026-47868 CVE-2026-47869 CVE-2026-47870 CVE-2026-47871"
+      },
+      "fetched_at": "2026-07-21T06:03:07.264Z"
+    },
     {
       "id": "CIVN-2026-0369",
       "type": "CIVN",
@@ -56,34 +84,6 @@
         "references": "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-1-2-released/ CVE Name CVE-2026-6896 CVE-2026-13320 CVE-2026-11827 CVE-2026-8472 CVE-2026-7492 CVE-2025-12506 CVE-2026-13151 CVE-2026-6352"
       },
       "fetched_at": "2026-07-18T02:34:49.517Z"
-    },
-    {
-      "id": "CIVN-2026-0367",
-      "type": "CIVN",
-      "title": "Multiple Vulnerabilities in Drupal",
-      "date": "July 17, 2026",
-      "severity": "High",
-      "source_url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES01&VLCODE=CIVN-2026-0367",
-      "priority": "this-week",
-      "category": "Websites & CMS",
-      "whoAffected": "Individuals and end-user organizations using Drupal.",
-      "whatItMeans": "Multiple vulnerabilities have been reported in Drupal core which could allow an attacker to disclose sensitive information and perform cross-site scripting (XSS) attacks on the targeted system.",
-      "whatToDo": [
-        "Upgrade to the latest versions as mentioned in the security advisories: https://www.drupal.org/sa-core-2026-010 https://www.drupal.org/sa-core-2026-011 https://www.drupal.org/sa-core-2026-012."
-      ],
-      "softwareAffected": "Drupal Core version prior to 10.6.13 Drupal Core versions 11.3.0 to 11.3.13 Drupal Core versions 11.4.0 to 11.4.3 Drupal Core versions 11.0.x Drupal Core versions 11.1.x Drupal Core versions 11.2.x",
-      "sections": {
-        "softwareAffected": "Drupal Core version prior to 10.6.13 Drupal Core versions 11.3.0 to 11.3.13 Drupal Core versions 11.4.0 to 11.4.3 Drupal Core versions 11.0.x Drupal Core versions 11.1.x Drupal Core versions 11.2.x",
-        "overview": "Multiple vulnerabilities have been reported in Drupal core which could allow an attacker to disclose sensitive information and perform cross-site scripting (XSS) attacks on the targeted system.",
-        "targetAudience": "Individuals and end-user organizations using Drupal.",
-        "riskAssessment": "High risk of unauthorized access, cross-site scripting (XSS) attacks.",
-        "impactAssessment": "Potential for data exposure, unauthorized access to sensitive information and potential compromise of system.",
-        "description": "Drupal is an open-source, content management system (CMS) which allows individuals and organizations to create, manage and maintain websites and web applications. These vulnerabilities exist in a Drupal core due to insufficient access check for image style derivatives, improper sanitization of certain HTMX attributes and improper sanitisation of block labels in certain scenarios. An attacker could exploit these vulnerabilities by sending specially crafted inputs. Successful exploitation of these vulnerabilities could allow an attacker to disclose sensitive information and perform cross-site scripting (XSS) attacks on the targeted system. Note: Drupal 10.5.x, Drupal 11.2.x and all prior releases have reached end-of-life and no longer receive security support. Drupal 8 and Drupal 9 have also reached end-of-life.",
-        "recommendations": null,
-        "solution": "Upgrade to the latest versions as mentioned in the security advisories: https://www.drupal.org/sa-core-2026-010 https://www.drupal.org/sa-core-2026-011 https://www.drupal.org/sa-core-2026-012",
-        "references": "Drupal https://www.drupal.org/sa-core-2026-010 https://www.drupal.org/sa-core-2026-011 https://www.drupal.org/sa-core-2026-012 CVE Name CVE-2026-15916 CVE-2026-15917 CVE-2026-55805"
-      },
-      "fetched_at": "2026-07-18T02:34:50.899Z"
     },
     {
       "id": "CIAD-2026-0035",
