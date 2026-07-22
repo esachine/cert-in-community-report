@@ -1,89 +1,89 @@
 {
-  "updated_at": "2026-07-21T11:01:59.848Z",
+  "updated_at": "2026-07-22T11:02:10.258Z",
   "items": [
     {
-      "id": "CIVN-2026-0371",
+      "id": "CIVN-2026-0374",
       "type": "CIVN",
-      "title": "Multiple Vulnerabilities in SonicWall",
-      "date": "July 21, 2026",
+      "title": "Multiple Vulnerabilities in Zoom Products",
+      "date": "July 22, 2026",
       "severity": "Critical",
-      "source_url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES01&VLCODE=CIVN-2026-0371",
+      "source_url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES01&VLCODE=CIVN-2026-0374",
       "priority": "act-now",
-      "category": "Network & security gear",
-      "whoAffected": "All end-user organizations and individuals using SonicWall Secure Mobile Access (SMA) 1000 Series appliances.",
-      "whatItMeans": "Multiple vulnerabilities have been reported in SonicWall Secure Mobile Access (SMA) 1000 Series appliances, which could allow a remote attacker to perform Server-Side Request Forgery (SSRF) or execute arbitrary operating system commands on the affected systems.",
+      "category": "Other software",
+      "whoAffected": "All end-user organisations and individuals using the affected versions of Zoom applications.",
+      "whatItMeans": "Multiple vulnerabilities have been reported in Zoom products that could be exploited by an attacker to achieve privilege escalation and account takeover via network access.",
       "whatToDo": [
-        "Apply appropriate security updates and mitigations as recommended by the vendor. https://www.sonicwall.com/support/notices/product-notice-sma-1000-series-affected-by-multiple-vulnerabilities/kA1VN000001nv6D0AQ https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0008."
+        "Apply appropriate updates as mentioned by the vendors given below: https://www.zoom.com/en/trust/security-bulletin/zsb-26011/ https://www.zoom.com/en/trust/security-bulletin/zsb-26012/ https://www.zoom.com/en/trust/security-bulletin/zsb-26013/ https://www.zoom.com/en/trust/security-bulletin/zsb-26014/."
       ],
-      "softwareAffected": "SonicWall Secure Mobile Access (SMA) 1000 Series appliances",
+      "softwareAffected": "Zoom Rooms for Windows before version 7.1.0 Zoom Workplace for Windows before version 7.0.5 Zoom Workplace VDI Client for Windows before versions 6.5.18, 6.6.15 and 7.0.10 in their respective branch Zoom Workplace VDI plugin for Windows before versions 6.5.17 and 6.6.14 in their respective branch Zoom Remote Control for Zoom Contact Center for Windows before version 7.0.0",
       "sections": {
-        "softwareAffected": "SonicWall Secure Mobile Access (SMA) 1000 Series appliances",
-        "overview": "Multiple vulnerabilities have been reported in SonicWall Secure Mobile Access (SMA) 1000 Series appliances, which could allow a remote attacker to perform Server-Side Request Forgery (SSRF) or execute arbitrary operating system commands on the affected systems.",
-        "targetAudience": "All end-user organizations and individuals using SonicWall Secure Mobile Access (SMA) 1000 Series appliances.",
-        "riskAssessment": "Risk of arbitrary operating system command execution, Server-Side Request Forgery (SSRF), and compromise of affected systems.",
-        "impactAssessment": "Potential for unauthorized requests to internal or unintended locations, arbitrary operating system command execution with administrative privileges, unauthorized access to resources reachable through the appliance and compromise of affected appliances.",
-        "description": "SonicWall Secure Mobile Access (SMA) 1000 Series appliances are secure remote access solutions used to provide secure access to enterprise networks and applications. Multiple vulnerabilities have been identified in SonicWall Secure Mobile Access (SMA) 1000 Series appliances. These vulnerabilities include a Server-Side Request Forgery (SSRF) vulnerability and a post-authentication Code Injection vulnerability. Successful exploitation of these vulnerabilities could allow an attacker to access internal or unintended network locations, execute arbitrary operating system commands and compromise the affected appliance. Note: CVE-2026-15409 and CVE-2026-15410 are being actively exploited in the wild.",
+        "softwareAffected": "Zoom Rooms for Windows before version 7.1.0 Zoom Workplace for Windows before version 7.0.5 Zoom Workplace VDI Client for Windows before versions 6.5.18, 6.6.15 and 7.0.10 in their respective branch Zoom Workplace VDI plugin for Windows before versions 6.5.17 and 6.6.14 in their respective branch Zoom Remote Control for Zoom Contact Center for Windows before version 7.0.0",
+        "overview": "Multiple vulnerabilities have been reported in Zoom products that could be exploited by an attacker to achieve privilege escalation and account takeover via network access.",
+        "targetAudience": "All end-user organisations and individuals using the affected versions of Zoom applications.",
+        "riskAssessment": "Critical risk of unauthorized access, privilege escalation, and system compromise.",
+        "impactAssessment": "Potential for bypassing security restrictions, privilege escalation, and account takeover.",
+        "description": "Zoom is a communications platform that provides video conferencing, team chat, phone services, whiteboard, mail, calendar, and other collaboration services for individuals and organisations. Multiple vulnerabilities exist in Zoom products due to improper input validation, race conditions (time-of-check to time-of-use), and improper privilege management. Successful exploitation of these vulnerabilities could allow an attacker to gain elevated privileges and account takeover via network access on the targeted system.",
         "recommendations": null,
-        "solution": "Apply appropriate security updates and mitigations as recommended by the vendor. https://www.sonicwall.com/support/notices/product-notice-sma-1000-series-affected-by-multiple-vulnerabilities/kA1VN000001nv6D0AQ https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0008",
-        "references": "https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-sma1000-flaws-exploited-in-zero-day-attacks-patch-now/ https://www.sonicwall.com/support/notices/product-notice-sma-1000-series-affected-by-multiple-vulnerabilities/kA1VN000001nv6D0AQ https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0008 CVE Name CVE-2026-15409 CVE-2026-15410"
+        "solution": "Apply appropriate updates as mentioned by the vendors given below: https://www.zoom.com/en/trust/security-bulletin/zsb-26011/ https://www.zoom.com/en/trust/security-bulletin/zsb-26012/ https://www.zoom.com/en/trust/security-bulletin/zsb-26013/ https://www.zoom.com/en/trust/security-bulletin/zsb-26014/",
+        "references": "Zoom https://www.zoom.com/en/trust/security-bulletin/zsb-26011/ https://www.zoom.com/en/trust/security-bulletin/zsb-26012/ https://www.zoom.com/en/trust/security-bulletin/zsb-26013/ https://www.zoom.com/en/trust/security-bulletin/zsb-26014/ CVE Name CVE-2026-53409 CVE-2026-53410 CVE-2026-53411 CVE-2026-53412"
       },
-      "fetched_at": "2026-07-21T11:01:58.841Z"
+      "fetched_at": "2026-07-22T11:02:06.694Z"
     },
     {
-      "id": "CIVN-2026-0370",
+      "id": "CIVN-2026-0373",
       "type": "CIVN",
-      "title": "Multiple Vulnerabilities in VMware Avi Load Balancer",
+      "title": "Multiple Vulnerabilities in WordPress",
       "date": "July 21, 2026",
       "severity": "Critical",
-      "source_url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES01&VLCODE=CIVN-2026-0370",
+      "source_url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES01&VLCODE=CIVN-2026-0373",
       "priority": "act-now",
-      "category": "Enterprise software",
-      "whoAffected": "Enterprises and large organisations, cloud service providers and industries with IT environments utilizing VMware Avi Load Balancer.",
-      "whatItMeans": "Multiple vulnerabilities have been reported in VMware Avi Load Balancer, which could allow an attacker to gain unauthorised access, escalate privileges, execute arbitrary code, and gain access to sensitive information on the targeted system.",
+      "category": "Websites & CMS",
+      "whoAffected": "Users of affected WordPress versions.",
+      "whatItMeans": "Multiple vulnerabilities have been reported in WordPress, which could allow an attacker to perform SQL injection attack, or execute arbitrary code on the targeted system.",
       "whatToDo": [
-        "Apply appropriate updates as mentioned by the vendor: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/37926."
+        "Apply the necessary patches and updates as provided by vendor: https://wordpress.org/news/2026/07/wordpress-7-0-2-release/."
       ],
-      "softwareAffected": "VMware Avi Load Balancer version 31.1.1 - 31.2.2 VMware Avi Load Balancer version 30.1.1 - 30.2.6 VMware Avi Load Balancer version 22.1.1 - 22.1.7 VMware Avi Load Balancer version 32.1.1",
+      "softwareAffected": "WordPress versions prior to 7.0.2",
       "sections": {
-        "softwareAffected": "VMware Avi Load Balancer version 31.1.1 - 31.2.2 VMware Avi Load Balancer version 30.1.1 - 30.2.6 VMware Avi Load Balancer version 22.1.1 - 22.1.7 VMware Avi Load Balancer version 32.1.1",
-        "overview": "Multiple vulnerabilities have been reported in VMware Avi Load Balancer, which could allow an attacker to gain unauthorised access, escalate privileges, execute arbitrary code, and gain access to sensitive information on the targeted system.",
-        "targetAudience": "Enterprises and large organisations, cloud service providers and industries with IT environments utilizing VMware Avi Load Balancer.",
-        "riskAssessment": "Risk of full system compromise, sensitive information disclosure and lateral movement.",
-        "impactAssessment": "Potential for local privilege escalation, disclosure of sensitive information and unauthorised access.",
-        "description": "VMware Avi Load Balancer is a software-defined, multi-cloud application delivery controller that provides elastic load balancing, application security (WAF), and observability for containerized, virtualised, and bare-metal workloads. Multiple vulnerabilities exist in VMware Avi Load Balancer due to improper authentication, insufficient input validation, improper privilege management and file path validation issues. An attacker may exploit these vulnerabilities by sending specially crafted requests. Successful exploitation of these vulnerabilities could allow an attacker to gain unauthorised access, escalate privileges, execute arbitrary code, and gain access to sensitive information on the targeted system.",
+        "softwareAffected": "WordPress versions prior to 7.0.2",
+        "overview": "Multiple vulnerabilities have been reported in WordPress, which could allow an attacker to perform SQL injection attack, or execute arbitrary code on the targeted system.",
+        "targetAudience": "Users of affected WordPress versions.",
+        "riskAssessment": "Risk of SQL injection attacks and remote code execution (RCE).",
+        "impactAssessment": "Potential for unauthorized access, execution of arbitrary code, privilege escalation, and full compromise.",
+        "description": "WordPress is an open-source content management system (CMS) used to build websites and blogs. Multiple vulnerabilities exist in WordPress due to a REST API batch endpoint route interpretation conflict (route confusion) and improper sanitization of the author__not_in parameter in WP_Query. Successful exploitation of these vulnerabilities could allow an attacker to perform SQL injection attack, or execute arbitrary code on the targeted system.",
         "recommendations": null,
-        "solution": "Apply appropriate updates as mentioned by the vendor: https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/37926",
-        "references": "VMware https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/37926 CVE Name CVE-2026-47865 CVE-2026-47866 CVE-2026-47867 CVE-2026-47868 CVE-2026-47869 CVE-2026-47870 CVE-2026-47871"
+        "solution": "Apply the necessary patches and updates as provided by vendor: https://wordpress.org/news/2026/07/wordpress-7-0-2-release/",
+        "references": "WordPress https://wordpress.org/news/2026/07/wordpress-7-0-2-release/ CVE Name CVE-2026-60137 CVE-2026-63030"
       },
-      "fetched_at": "2026-07-21T06:03:07.264Z"
+      "fetched_at": "2026-07-22T11:02:07.988Z"
     },
     {
-      "id": "CIVN-2026-0369",
+      "id": "CIVN-2026-0372",
       "type": "CIVN",
-      "title": "Multiple Vulnerabilities in Apache Tomcat",
-      "date": "July 20, 2026",
-      "severity": "Critical",
-      "source_url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES01&VLCODE=CIVN-2026-0369",
-      "priority": "act-now",
-      "category": "Enterprise software",
-      "whoAffected": "All end user organizations and individuals responsible for maintaining and updating Apache Tomcat.",
-      "whatItMeans": "Multiple vulnerabilities have been reported in Apache Tomcat that could allow an attacker to bypass security restrictions or gain unauthorized access to protected resources on the affected system.",
+      "title": "Multiple Vulnerabilities in TP-Link Products",
+      "date": "July 21, 2026",
+      "severity": "High",
+      "source_url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES01&VLCODE=CIVN-2026-0372",
+      "priority": "this-week",
+      "category": "Other software",
+      "whoAffected": "All organizations and individuals using the affected TP-Link products.",
+      "whatItMeans": "Multiple vulnerabilities have been reported in TP-Link products, which could allow an attacker on the same local network to disclose sensitive information, intercept encrypted communications through a Man-in-the-Middle (MITM) attack, expose geolocation information, and compromise the confidentiality of the affected devices.",
       "whatToDo": [
-        "Apply appropriate fixes as mentioned in the Apache Tomcat Security Updates: https://tomcat.apache.org/security-11.html#Fixed_in_Apache_Tomcat_11.0.24 https://tomcat.apache.org/security-10.html#Fixed_in_Apache_Tomcat_10.1.57 https://tomcat.apache.org/security-9.html#Fixed_in_Apache_Tomcat_9.0.120 https://tomcat.apache.org/security-8.html https://tomcat.apache.org/security-7.html."
+        "Apply appropriate firmware updates as recommended by the vendor. https://www.tp-link.com/us/support/faq/5192/."
       ],
-      "softwareAffected": "Apache Tomcat 11 versions prior to 11.0.24 Apache Tomcat 10.1 versions prior to 10.1.57 Apache Tomcat 9 versions prior to 9.0.120 Apache Tomcat versions 8.5.38 through 8.5.100 Apache Tomcat versions 7.0.100 through 7.0.109",
+      "softwareAffected": "TP-Link Kasa EC70 V4 firmware versions prior to 2.4.0 Build 20260520 rel. 4191 TP-Link Kasa EC71 V4 firmware versions prior to 2.4.0 Build 20260520 rel. 4191 TP-Link Kasa EC70 V4 firmware versions prior to 2.4.1 Build 20260621 rel. 76536 TP-Link Kasa EC71 V4 firmware versions prior to 2.4.1 Build 20260621 rel. 76536",
       "sections": {
-        "softwareAffected": "Apache Tomcat 11 versions prior to 11.0.24 Apache Tomcat 10.1 versions prior to 10.1.57 Apache Tomcat 9 versions prior to 9.0.120 Apache Tomcat versions 8.5.38 through 8.5.100 Apache Tomcat versions 7.0.100 through 7.0.109",
-        "overview": "Multiple vulnerabilities have been reported in Apache Tomcat that could allow an attacker to bypass security restrictions or gain unauthorized access to protected resources on the affected system.",
-        "targetAudience": "All end user organizations and individuals responsible for maintaining and updating Apache Tomcat.",
-        "riskAssessment": "Risk of security constraint bypass, unauthorized access, and insecure cluster communication configuration.",
-        "impactAssessment": "Potential for unauthorized access to protected resources and weakened security of encrypted Tomcat cluster communications.",
-        "description": "Apache Tomcat is an open-source web server and servlet container used to deploy Java-based web applications. Multiple vulnerabilities have been identified in Apache Tomcat due to improper handling of URL encoding (hex encoding) in the RewriteValve component and insufficient technical documentation for securely configuring the EncryptInterceptor component. Successful exploitation of these vulnerabilities could allow an attacker to bypass security restrictions or gain unauthorized access to protected resources on the affected system.",
+        "softwareAffected": "TP-Link Kasa EC70 V4 firmware versions prior to 2.4.0 Build 20260520 rel. 4191 TP-Link Kasa EC71 V4 firmware versions prior to 2.4.0 Build 20260520 rel. 4191 TP-Link Kasa EC70 V4 firmware versions prior to 2.4.1 Build 20260621 rel. 76536 TP-Link Kasa EC71 V4 firmware versions prior to 2.4.1 Build 20260621 rel. 76536",
+        "overview": "Multiple vulnerabilities have been reported in TP-Link products, which could allow an attacker on the same local network to disclose sensitive information, intercept encrypted communications through a Man-in-the-Middle (MITM) attack, expose geolocation information, and compromise the confidentiality of the affected devices.",
+        "targetAudience": "All organizations and individuals using the affected TP-Link products.",
+        "riskAssessment": "High risk of sensitive information disclosure, compromise of encrypted communications through Man-in-the-Middle (MITM) attacks, and exposure of geolocation information.",
+        "impactAssessment": "Potential for disclosure of sensitive information, interception of encrypted communications, exposure of geolocation information, and compromise of the confidentiality of affected devices.",
+        "description": "TP-Link Kasa EC70 and EC71 are smart security cameras that provide remote monitoring and surveillance capabilities for residential and enterprise environments. These vulnerabilities exist in TP-Link products due to the use of a hard-coded cryptographic private key within the firmware and exposure of sensitive geolocation information through the local discovery mechanism. Successful exploitation of these vulnerabilities could allow an attacker to disclose sensitive information, intercept encrypted communications through a Man-in-the-Middle (MITM) attack, expose geolocation information, and compromise the confidentiality of the affected devices.",
         "recommendations": null,
-        "solution": "Apply appropriate fixes as mentioned in the Apache Tomcat Security Updates: https://tomcat.apache.org/security-11.html#Fixed_in_Apache_Tomcat_11.0.24 https://tomcat.apache.org/security-10.html#Fixed_in_Apache_Tomcat_10.1.57 https://tomcat.apache.org/security-9.html#Fixed_in_Apache_Tomcat_9.0.120 https://tomcat.apache.org/security-8.html https://tomcat.apache.org/security-7.html",
-        "references": "https://tomcat.apache.org/security-11.html#Fixed_in_Apache_Tomcat_11.0.24 https://tomcat.apache.org/security-10.html#Fixed_in_Apache_Tomcat_10.1.57 https://tomcat.apache.org/security-9.html#Fixed_in_Apache_Tomcat_9.0.120 https://tomcat.apache.org/security-8.html https://tomcat.apache.org/security-7.html CVE Name CVE-2026-59083 CVE-2026-59084"
+        "solution": "Apply appropriate firmware updates as recommended by the vendor. https://www.tp-link.com/us/support/faq/5192/",
+        "references": "https://www.tp-link.com/us/support/faq/5192/ CVE Name CVE-2026-9770 CVE-2026-13230"
       },
-      "fetched_at": "2026-07-20T10:24:19.936Z"
+      "fetched_at": "2026-07-22T11:02:09.243Z"
     },
     {
       "id": "CIAD-2026-0035",
