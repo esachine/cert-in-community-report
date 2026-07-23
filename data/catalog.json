@@ -1,6 +1,34 @@
 {
-  "updated_at": "2026-07-23T05:26:24.275Z",
+  "updated_at": "2026-07-23T17:15:21.876Z",
   "items": [
+    {
+      "id": "CIVN-2026-0376",
+      "type": "CIVN",
+      "title": "Multiple Vulnerabilities in Microsoft Products",
+      "date": "July 23, 2026",
+      "severity": "Critical",
+      "source_url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES01&VLCODE=CIVN-2026-0376",
+      "priority": "act-now",
+      "category": "Enterprise software",
+      "whoAffected": "All end-user organizations and individuals using Microsoft Products.",
+      "whatItMeans": "Multiple vulnerabilities have been reported in Microsoft Products, which could allow an attacker to perform spoofing, elevate privilege, perform tampering and disclose sensitive information on the targeted system.",
+      "whatToDo": [
+        "Apply appropriate updates as mentioned by the vendor: https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-47646 https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-47645 https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-48582 https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-48584 https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-47647 https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-42895 https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-32174 https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-32208 https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-47633."
+      ],
+      "softwareAffected": "Dynamics 365 Customer Voice Microsoft 365 Copilot Microsoft Exchange Online Azure Synapse Microsoft Dynamics 365 Azure AI Bot Service Microsoft Edge (Chromium-based) Microsoft Cost Management",
+      "sections": {
+        "softwareAffected": "Dynamics 365 Customer Voice Microsoft 365 Copilot Microsoft Exchange Online Azure Synapse Microsoft Dynamics 365 Azure AI Bot Service Microsoft Edge (Chromium-based) Microsoft Cost Management",
+        "overview": "Multiple vulnerabilities have been reported in Microsoft Products, which could allow an attacker to perform spoofing, elevate privilege, perform tampering and disclose sensitive information on the targeted system.",
+        "targetAudience": "All end-user organizations and individuals using Microsoft Products.",
+        "riskAssessment": "High risk of privilege escalation, spoofing, sensitive information disclosure.",
+        "impactAssessment": "Potential for privilege escalation, spoofing, sensitive information disclosure and/or compromise of system.",
+        "description": "Multiple vulnerabilities have been reported in Microsoft Products due to improper neutralization of input during web page generation, URL redirection to untrusted site, missing authorization, execution with unnecessary privileges, improper access control, improper authentication, exposure of sensitive information, and improper neutralization of special elements in command. An attacker could exploit these vulnerabilities to perform spoofing, elevate privileges, perform tampering or disclose information over a network on the targeted system. Successful exploitation of these vulnerabilities could allow an attacker to gain unauthorized access, access sensitive information, elevate privileges, perform tampering over a network and/or perform spoofing on the targeted system.",
+        "recommendations": null,
+        "solution": "Apply appropriate updates as mentioned by the vendor: https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-47646 https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-47645 https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-48582 https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-48584 https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-47647 https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-42895 https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-32174 https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-32208 https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-47633",
+        "references": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-47646 https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-47645 https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-48582 https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-48584 https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-47647 https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-42895 https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-32174 https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-32208 https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-47633 CVE Name CVE-2026-47646 CVE-2026-47645 CVE-2026-48582 CVE-2026-48584 CVE-2026-47647 CVE-2026-42895 CVE-2026-32174 CVE-2026-32208 CVE-2026-47633"
+      },
+      "fetched_at": "2026-07-23T17:15:20.859Z"
+    },
     {
       "id": "CIVN-2026-0375",
       "type": "CIVN",
@@ -56,34 +84,6 @@
         "references": "Zoom https://www.zoom.com/en/trust/security-bulletin/zsb-26011/ https://www.zoom.com/en/trust/security-bulletin/zsb-26012/ https://www.zoom.com/en/trust/security-bulletin/zsb-26013/ https://www.zoom.com/en/trust/security-bulletin/zsb-26014/ CVE Name CVE-2026-53409 CVE-2026-53410 CVE-2026-53411 CVE-2026-53412"
       },
       "fetched_at": "2026-07-22T11:02:06.694Z"
-    },
-    {
-      "id": "CIVN-2026-0373",
-      "type": "CIVN",
-      "title": "Multiple Vulnerabilities in WordPress",
-      "date": "July 21, 2026",
-      "severity": "Critical",
-      "source_url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES01&VLCODE=CIVN-2026-0373",
-      "priority": "act-now",
-      "category": "Websites & CMS",
-      "whoAffected": "Users of affected WordPress versions.",
-      "whatItMeans": "Multiple vulnerabilities have been reported in WordPress, which could allow an attacker to perform SQL injection attack, or execute arbitrary code on the targeted system.",
-      "whatToDo": [
-        "Apply the necessary patches and updates as provided by vendor: https://wordpress.org/news/2026/07/wordpress-7-0-2-release/."
-      ],
-      "softwareAffected": "WordPress versions prior to 7.0.2",
-      "sections": {
-        "softwareAffected": "WordPress versions prior to 7.0.2",
-        "overview": "Multiple vulnerabilities have been reported in WordPress, which could allow an attacker to perform SQL injection attack, or execute arbitrary code on the targeted system.",
-        "targetAudience": "Users of affected WordPress versions.",
-        "riskAssessment": "Risk of SQL injection attacks and remote code execution (RCE).",
-        "impactAssessment": "Potential for unauthorized access, execution of arbitrary code, privilege escalation, and full compromise.",
-        "description": "WordPress is an open-source content management system (CMS) used to build websites and blogs. Multiple vulnerabilities exist in WordPress due to a REST API batch endpoint route interpretation conflict (route confusion) and improper sanitization of the author__not_in parameter in WP_Query. Successful exploitation of these vulnerabilities could allow an attacker to perform SQL injection attack, or execute arbitrary code on the targeted system.",
-        "recommendations": null,
-        "solution": "Apply the necessary patches and updates as provided by vendor: https://wordpress.org/news/2026/07/wordpress-7-0-2-release/",
-        "references": "WordPress https://wordpress.org/news/2026/07/wordpress-7-0-2-release/ CVE Name CVE-2026-60137 CVE-2026-63030"
-      },
-      "fetched_at": "2026-07-22T11:02:07.988Z"
     },
     {
       "id": "CIAD-2026-0036",
