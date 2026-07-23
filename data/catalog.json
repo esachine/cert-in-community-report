@@ -1,6 +1,34 @@
 {
-  "updated_at": "2026-07-22T11:02:10.258Z",
+  "updated_at": "2026-07-23T05:26:24.275Z",
   "items": [
+    {
+      "id": "CIVN-2026-0375",
+      "type": "CIVN",
+      "title": "Multiple Vulnerabilities in BeyondTrust",
+      "date": "July 22, 2026",
+      "severity": "Critical",
+      "source_url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES01&VLCODE=CIVN-2026-0375",
+      "priority": "act-now",
+      "category": "Other software",
+      "whoAffected": "All end-user organizations and individuals using BeyondTrust.",
+      "whatItMeans": "Multiple vulnerabilities have been reported in BeyondTrust Remote Support (RS) and Privilege Remote Access (PRA), which could allow an attacker to bypass authentication, gain unauthorized access, cause denial-of-service conditions, access unintended resources on the targeted system.",
+      "whatToDo": [
+        "Apply appropriate updates as mentioned by the vendor: https://www.beyondtrust.com/trust-center/security-advisories/bt26-03."
+      ],
+      "softwareAffected": "BeyondTrust Remote Support versions RS 25.3.2 or lower BeyondTrust Privileged Remote Access versions PRA 25.3.2 or lower",
+      "sections": {
+        "softwareAffected": "BeyondTrust Remote Support versions RS 25.3.2 or lower BeyondTrust Privileged Remote Access versions PRA 25.3.2 or lower",
+        "overview": "Multiple vulnerabilities have been reported in BeyondTrust Remote Support (RS) and Privilege Remote Access (PRA), which could allow an attacker to bypass authentication, gain unauthorized access, cause denial-of-service conditions, access unintended resources on the targeted system.",
+        "targetAudience": "All end-user organizations and individuals using BeyondTrust.",
+        "riskAssessment": "High risk of denial-of-service, bypass security restrictions, sensitive information disclosure.",
+        "impactAssessment": "Potential for denial-of-service, bypass security restrictions, sensitive information disclosure and/or compromise of system.",
+        "description": "BeyondTrust Remote Support (RS) and Privilege Remote Access (PRA) are secure remote access and privileged access management solutions used to provide and manage remote administrative access. Multiple vulnerabilities have been reported in BeyondTrust due to improper authentication, uncontrolled resource consumption, and improper neutralization of special elements in data query logic. An attacker could exploit these vulnerabilities to bypass authentication, trigger denial-of-service conditions, or access resources beyond their authorization scope on the targeted system. Successful exploitation of these vulnerabilities could allow an attacker to gain unauthorized access, access sensitive information, elevate privileges under specific configurations, disrupt service availability, and potentially compromise the targeted system.",
+        "recommendations": null,
+        "solution": "Apply appropriate updates as mentioned by the vendor: https://www.beyondtrust.com/trust-center/security-advisories/bt26-03",
+        "references": "https://www.beyondtrust.com/trust-center/security-advisories/bt26-03 CVE Name CVE-2026-40138 CVE-2026-40139 CVE-2026-40140 CVE-2026-40141"
+      },
+      "fetched_at": "2026-07-23T05:26:21.931Z"
+    },
     {
       "id": "CIVN-2026-0374",
       "type": "CIVN",
@@ -58,32 +86,32 @@
       "fetched_at": "2026-07-22T11:02:07.988Z"
     },
     {
-      "id": "CIVN-2026-0372",
-      "type": "CIVN",
-      "title": "Multiple Vulnerabilities in TP-Link Products",
-      "date": "July 21, 2026",
+      "id": "CIAD-2026-0036",
+      "type": "CIAD",
+      "title": "Multiple Vulnerabilities in Oracle Products",
+      "date": "July 22, 2026",
       "severity": "High",
-      "source_url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES01&VLCODE=CIVN-2026-0372",
+      "source_url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES02&VLCODE=CIAD-2026-0036",
       "priority": "this-week",
-      "category": "Other software",
-      "whoAffected": "All organizations and individuals using the affected TP-Link products.",
-      "whatItMeans": "Multiple vulnerabilities have been reported in TP-Link products, which could allow an attacker on the same local network to disclose sensitive information, intercept encrypted communications through a Man-in-the-Middle (MITM) attack, expose geolocation information, and compromise the confidentiality of the affected devices.",
+      "category": "Enterprise software",
+      "whoAffected": "Organizations and IT administrators using Oracle Corporation products.",
+      "whatItMeans": "Multiple vulnerabilities have been reported in various Oracle products which could be exploited by a remote attacker to execute arbitrary code, gain elevated privileges, cause denial-of-service conditions, access sensitive information, manipulate data, or bypass security controls on the targeted system.",
       "whatToDo": [
-        "Apply appropriate firmware updates as recommended by the vendor. https://www.tp-link.com/us/support/faq/5192/."
+        "Apply appropriate updates as mentioned in Oracle updates: https://www.oracle.com/security-alerts/cpujul2026.html."
       ],
-      "softwareAffected": "TP-Link Kasa EC70 V4 firmware versions prior to 2.4.0 Build 20260520 rel. 4191 TP-Link Kasa EC71 V4 firmware versions prior to 2.4.0 Build 20260520 rel. 4191 TP-Link Kasa EC70 V4 firmware versions prior to 2.4.1 Build 20260621 rel. 76536 TP-Link Kasa EC71 V4 firmware versions prior to 2.4.1 Build 20260621 rel. 76536",
+      "softwareAffected": "Oracle MySQL Java SE Oracle Database Server WebLogic Server Oracle Communications Oracle Construction and Engineering Oracle Enterprise Manager Oracle Financial Services Applications Oracle Fusion Middleware Oracle E-Business Suite For complete list of affected products refer to the oracle advisory: https://www.oracle.com/security-alerts/cpujul2026.html",
       "sections": {
-        "softwareAffected": "TP-Link Kasa EC70 V4 firmware versions prior to 2.4.0 Build 20260520 rel. 4191 TP-Link Kasa EC71 V4 firmware versions prior to 2.4.0 Build 20260520 rel. 4191 TP-Link Kasa EC70 V4 firmware versions prior to 2.4.1 Build 20260621 rel. 76536 TP-Link Kasa EC71 V4 firmware versions prior to 2.4.1 Build 20260621 rel. 76536",
-        "overview": "Multiple vulnerabilities have been reported in TP-Link products, which could allow an attacker on the same local network to disclose sensitive information, intercept encrypted communications through a Man-in-the-Middle (MITM) attack, expose geolocation information, and compromise the confidentiality of the affected devices.",
-        "targetAudience": "All organizations and individuals using the affected TP-Link products.",
-        "riskAssessment": "High risk of sensitive information disclosure, compromise of encrypted communications through Man-in-the-Middle (MITM) attacks, and exposure of geolocation information.",
-        "impactAssessment": "Potential for disclosure of sensitive information, interception of encrypted communications, exposure of geolocation information, and compromise of the confidentiality of affected devices.",
-        "description": "TP-Link Kasa EC70 and EC71 are smart security cameras that provide remote monitoring and surveillance capabilities for residential and enterprise environments. These vulnerabilities exist in TP-Link products due to the use of a hard-coded cryptographic private key within the firmware and exposure of sensitive geolocation information through the local discovery mechanism. Successful exploitation of these vulnerabilities could allow an attacker to disclose sensitive information, intercept encrypted communications through a Man-in-the-Middle (MITM) attack, expose geolocation information, and compromise the confidentiality of the affected devices.",
+        "softwareAffected": "Oracle MySQL Java SE Oracle Database Server WebLogic Server Oracle Communications Oracle Construction and Engineering Oracle Enterprise Manager Oracle Financial Services Applications Oracle Fusion Middleware Oracle E-Business Suite For complete list of affected products refer to the oracle advisory: https://www.oracle.com/security-alerts/cpujul2026.html",
+        "overview": "Multiple vulnerabilities have been reported in various Oracle products which could be exploited by a remote attacker to execute arbitrary code, gain elevated privileges, cause denial-of-service conditions, access sensitive information, manipulate data, or bypass security controls on the targeted system.",
+        "targetAudience": "Organizations and IT administrators using Oracle Corporation products.",
+        "riskAssessment": "Risk of remote code execution, system instability or sensitive information disclosure.",
+        "impactAssessment": "Potential unauthorized access to sensitive information, denial of service, data manipulation, and complete takeover of control of the target system.",
+        "description": "Oracle products are used for several applications including enterprise-level data management, cloud solutions, software development, and business applications. They are employed across a wide range of sectors, including finance, healthcare, manufacturing, government, and retail, among others. These vulnerabilities exist in various components of Oracle products due to improper input validation, deserialization issues, memory corruption errors, access control weaknesses, insufficient authentication, SQL injection, XML parsing errors, or vulnerable third-party libraries. Successful exploitation of these vulnerabilities could allow an attacker to execute arbitrary code, gain elevated privileges, cause denial-of-service conditions, access sensitive information, manipulate data, or bypass security controls on the targeted system. For complete list of affected products, CVEs, workarounds and solutions, refer to the oracle advisory: https://www.oracle.com/security-alerts/cpujul2026.html",
         "recommendations": null,
-        "solution": "Apply appropriate firmware updates as recommended by the vendor. https://www.tp-link.com/us/support/faq/5192/",
-        "references": "https://www.tp-link.com/us/support/faq/5192/ CVE Name CVE-2026-9770 CVE-2026-13230"
+        "solution": "Apply appropriate updates as mentioned in Oracle updates: https://www.oracle.com/security-alerts/cpujul2026.html",
+        "references": "https://www.oracle.com/security-alerts/cpujul2026.html"
       },
-      "fetched_at": "2026-07-22T11:02:09.243Z"
+      "fetched_at": "2026-07-23T05:26:23.268Z"
     },
     {
       "id": "CIAD-2026-0035",
@@ -140,34 +168,6 @@
         "references": "SAP https://support.sap.com/en/my-support/knowledge-base/security-notes-news/july-2026.html CVE Name CVE-2026-44747 CVE-2026-27690 CVE-2026-44761 CVE-2026-40128 CVE-2026-40860 CVE-2026-40453 CVE-2026-33454 CVE-2026-0487 CVE-2026-44752 CVE-2026-44745 CVE-2026-43512 CVE-2026-41293 CVE-2026-43515 CVE-2026-58233 CVE-2026-44759 CVE-2026-44767 CVE-2026-44769 CVE-2026-44760 CVE-2026-44771 CVE-2026-44770 CVE-2026-24315 CVE-2026-44768 CVE-2026-44753 CVE-2025-68161"
       },
       "fetched_at": "2026-07-16T08:01:02.336Z"
-    },
-    {
-      "id": "CIAD-2026-0033",
-      "type": "CIAD",
-      "title": "Multiple vulnerabilities in Apple Products",
-      "date": "June 30, 2026",
-      "severity": "Critical",
-      "source_url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES02&VLCODE=CIAD-2026-0033",
-      "priority": "act-now",
-      "category": "Other software",
-      "whoAffected": "All individual and organizations using Apple Products.",
-      "whatItMeans": "Multiple vulnerabilities have been reported in Apple products which could allow an attacker to disclose sensitive information, gain elevated privileges, bypass security restrictions, execute arbitrary code, perform cross-origin data exfiltration, and cause denial-of-service (DoS) condition on the targeted system.",
-      "whatToDo": [
-        "Apply appropriate updates as mentioned by the vendor: https://support.apple.com/en-us/127594 https://support.apple.com/en-us/127595 https://support.apple.com/en-us/127685."
-      ],
-      "softwareAffected": "Apple iOS versions prior to 26.5.2 Apple iPadOS versions prior to 26.5.2 Apple macOS Tahoe versions prior to 26.5.2 Apple Safari versions prior to 26.5.2",
-      "sections": {
-        "softwareAffected": "Apple iOS versions prior to 26.5.2 Apple iPadOS versions prior to 26.5.2 Apple macOS Tahoe versions prior to 26.5.2 Apple Safari versions prior to 26.5.2",
-        "overview": "Multiple vulnerabilities have been reported in Apple products which could allow an attacker to disclose sensitive information, gain elevated privileges, bypass security restrictions, execute arbitrary code, perform cross-origin data exfiltration, and cause denial-of-service (DoS) condition on the targeted system.",
-        "targetAudience": "All individual and organizations using Apple Products.",
-        "riskAssessment": "High risk of sensitive information disclosure, privilege escalation, disruption of services.",
-        "impactAssessment": "Potential for full system compromise, remote code execution, service unavailability.",
-        "description": "Multiple vulnerabilities have been reported in Apple products:",
-        "recommendations": null,
-        "solution": "Apply appropriate updates as mentioned by the vendor: https://support.apple.com/en-us/127594 https://support.apple.com/en-us/127595 https://support.apple.com/en-us/127685",
-        "references": "Apple https://support.apple.com/en-us/127594 https://support.apple.com/en-us/127595 https://support.apple.com/en-us/127685"
-      },
-      "fetched_at": "2026-07-16T08:01:03.982Z"
     }
   ]
 }

@@ -1,11 +1,10 @@
 {
   "mode": "delta",
-  "checked_at": "2026-07-22T11:02:10.303Z",
+  "checked_at": "2026-07-23T05:26:24.281Z",
   "total_known": 6,
-  "new_count": 3,
+  "new_count": 2,
   "new_ids": [
-    "CIVN-2026-0374",
-    "CIVN-2026-0373",
-    "CIVN-2026-0372"
+    "CIVN-2026-0375",
+    "CIAD-2026-0036"
   ]
 }
